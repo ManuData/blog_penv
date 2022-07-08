@@ -1,7 +1,18 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import pandas as pd
+import numpy as np
+import json
+
+# Datos a modo de test
+test_datos = [0,1,2,30,34,21]
+serie = pd.Series(test_datos,name="test")
+obj = {'test1':1,'test2':2}
 
 # Create your views here.
+
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return render(request,'blog/index.html',{'numbers':serie,"obj_as_json":json.dumps(obj)})
+
+
 
