@@ -9,9 +9,11 @@ nav{
    
   
   }
-  
+ 
   .navBar{
     z-index:9999;
+    /*background-color: rgb(205, 231, 251);*/
+    border-bottom: 1px solid black;
   }
   
   ul {
@@ -30,7 +32,7 @@ nav{
   }
   li a {
     text-decoration: none;
-    color:yellow;
+    color:black;
     font-size: 1.2rem;
     font-weight: bold;
     
