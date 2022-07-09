@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{% static 'blog/base.css' %}">
+   
+    <title>Document</title>
+    
+</head>
+ 
+<body> 
+
+    <div id="myNav" class="overlay">
+        <button class="closebtn" onclick="closeNav()">&#8339;</button>
+        <div class="overlay-content">
+          <a>.who_is()</a>
+          <a>.projects()</a>
+          <a>.Contact()</a>
+          <i style="font-size:26px" class="fa"> <a href ="https://github.com/ManuData"  target="_blank" style="text-decoration:none">&#xf09b;</i></a> 
+        
+        </div>
+      </div>
+
+      <nav class = "navBar">
+        <ul>
+          <li><a>.who_is()</a></li>
+          <li><a>.projects()</a></li>
+          <li><a>.Contact()</a></li>
+          <li><i style="font-size:26px" class="fa"> <a href ="https://github.com/ManuData"  target="_blank" style="text-decoration:none"> &#xf09b;</i></a></li>
+        </ul>
+      </nav>
+        
+    
+      <span class = "buttonMenu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#8285;</span>
+      <div>
+         
+
+      </div>
+
+      <script>
+
+        function openNav() {
+
+          /*Efecto overlay*/
+          document.getElementById("myNav").style.width = "100%";
+
+          /*Incorporación de clase Active en el menú mobile cuando se genera click */
+          botonMobile = document.getElementsByClassName("buttonMenu");
+          botonMobile[0].classList.toggle('active');
+
+           /*Incorporación de clase Active en la "X" de cierre mobile cuando se genera click */
+          closeBtn = document.getElementsByClassName("closebtn");
+          closeBtn[0].classList.toggle('active');
+
+
+          /*Efectos*/
+          /*$(botonMobile).css({transition:'opacity 0.5s ease-in-out',
+                "opacity":0});*/
+    
+        }
+        
+        function closeNav() {
+
+          /*Efectos*/
+
+          document.getElementById("myNav").style.width = "0%";
+          /*$(botonMobile).css({transition:'opacity 1s ease-in-out',
+                "opacity":1})*/
+
+
+          /*Elimino las clases*/
+          botonMobile[0].classList.remove('active');
+          closeBtn[0].classList.remove('active');
+        }
+        </script>
+
+</body>
+
+</html>
+

@@ -14,5 +14,8 @@ obj = {'test1':1,'test2':2}
 def index(request):
     return render(request,'blog/index.html',{'numbers':serie,"obj_as_json":json.dumps(obj)})
 
+def base(request):
+    return render(request,'blog/base.html')
+
 
 
