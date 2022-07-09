@@ -1,7 +1,57 @@
-{% extends "blog/base.html" %}
+
+
+<!DOCTYPE html>
+
+<html lang="es">
     
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+
+<style>
+
+html{
+    height: 200vh;
+}
+
+main{
+    display: flex;
+    gap: 2rem;
+    max-width: 80%;
+    margin: 2rem auto;
+}
+
+.tab {
+    text-indent: 5%;
+    margin-left: 10%;
+    margin-right:10%;
+    
+}
+.idea{
+    margin-left:10%;
+}
+
+h2{
+    /*border-bottom: 1px solid black;*/
+    text-decoration: underline;
+
+}
+
+.sticky{
+    height: 10rem;
+    width: 10rem;
+    position:sticky;
+    top:2rem;
+}
+
+
+</style>
+
+<head>
 
     
+</head>
+<body>
+    {%extends "base.html"%}
     {%block content%} 
 
     <main>
@@ -25,27 +75,6 @@
                         Modi, a leader of the Bharatiya Janata Party (BJP), previously served as the Chief Minister  
                         of Gujarat state from 2001 to 2014. He is currently the Member of Parliament (MP) from Varanasi.
                         of Gujarat state from 2001 to 2014. He is currently the Member of Parliament (MP) from Varanasi</p>
-                <p class="tab">Narendra DamodarDas Modi is the 15th and current Prime Minister of India,    
-                Modi, a leader of the Bharatiya Janata Party (BJP), previously served as the Chief Minister  
-                of Gujarat state from 2001 to 2014. He is currently the Member of Parliament (MP) from Varanasi.
-                of Gujarat state from 2001 to 2014. He is currently the Member of Parliament (MP) from Varanasi</p>
-                <p class="tab">Narendra DamodarDas Modi is the 15th and current Prime Minister of India,    
-                Modi, a leader of the Bharatiya Janata Party (BJP), previously served as the Chief Minister  
-                of Gujarat state from 2001 to 2014. He is currently the Member of Parliament (MP) from Varanasi.
-                of Gujarat state from 2001 to 2014. He is currently the Member of Parliament (MP) from Varanasi</p>
-                <p class="tab">Narendra DamodarDas Modi is the 15th and current Prime Minister of India,    
-                Modi, a leader of the Bharatiya Janata Party (BJP), previously served as the Chief Minister  
-                of Gujarat state from 2001 to 2014. He is currently the Member of Parliament (MP) from Varanasi.
-                of Gujarat state from 2001 to 2014. He is currently the Member of Parliament (MP) from Varanasi</p>
-                <p class="tab">Narendra DamodarDas Modi is the 15th and current Prime Minister of India,    
-                Modi, a leader of the Bharatiya Janata Party (BJP), previously served as the Chief Minister  
-                of Gujarat state from 2001 to 2014. He is currently the Member of Parliament (MP) from Varanasi.
-                of Gujarat state from 2001 to 2014. He is currently the Member of Parliament (MP) from Varanasi</p>
-
-
-
-
-
         </article>  
         <aside class="sticky">Side Bar
             <p>Importante</p>
@@ -68,5 +97,6 @@
     <!-- END script -->
 
     {%endblock%} 
+</body>
 
-
+</html>

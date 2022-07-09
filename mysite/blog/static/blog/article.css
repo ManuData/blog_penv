@@ -1,0 +1,37 @@
+
+
+html{
+    height: 200vh;
+}
+
+main{
+    display: flex;
+    gap: 2rem;
+    max-width: 80%;
+    margin: 2rem auto;
+}
+
+.tab {
+    text-indent: 5%;
+    margin-left: 10%;
+    margin-right:10%;
+    
+}
+.idea{
+    margin-left:10%;
+}
+
+h2{
+    /*border-bottom: 1px solid black;*/
+    text-decoration: underline;
+
+}
+
+.sticky{
+    height: 10rem;
+    width: 10rem;
+    position:sticky;
+    top:20rem;
+    
+}
+
