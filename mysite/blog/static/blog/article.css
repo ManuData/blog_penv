@@ -19,7 +19,21 @@ main{
 }
 .idea{
     margin-left:10%;
+    display:contents;
+
 }
+.idea > li{
+
+    list-style-type: disc;
+    padding-top: 1rem;
+    font-size: 15px;
+    margin-left: 11%;
+    margin-right:10%;
+
+    
+}
+
+
 
 h2{
     /*border-bottom: 1px solid black;*/
