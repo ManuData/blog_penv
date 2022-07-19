@@ -95,6 +95,7 @@ nav{
   }
   
   @media screen and (max-width: 450px) {
+
   
     .buttonMenu{
       display: flex;
@@ -144,5 +145,9 @@ nav{
     top: 15px;
     right: 21px;
     }
+
+    .sticky{
+      display:none;
+    }
   
-  }
+  } 
