@@ -19,5 +19,12 @@ def index(request):
 def base(request):
     return render(request,'blog/base.html')
 
+def search_results(request):
+    return render(request,'blog/search_results.html')
+
+    
+
+
+
 
 
