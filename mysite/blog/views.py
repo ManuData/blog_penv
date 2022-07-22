@@ -12,6 +12,7 @@ obj = {'test1':1,'test2':2}
 
 # Create your views here.
 
+
 def index(request):
     return render(request,'blog/index.html',{'numbers':serie,"obj_as_json":json.dumps(obj)})
 
@@ -20,7 +21,8 @@ def base(request):
     return render(request,'blog/base.html')
 
 def search_results(request):
-    return render(request,'blog/search_results.html')
+    query = request.GET.get("q")
+    return render(request,'blog/search_results.html',{'data':query})
 
     
 
