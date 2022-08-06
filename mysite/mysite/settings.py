@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Incorporamos el app del blog
-    'blog.apps.BlogConfig'
+    'blog.apps.BlogConfig',
+    # Incorporamos el app del search
+    'search.apps.SearchConfig',
+
 ]
 
 MIDDLEWARE = [
