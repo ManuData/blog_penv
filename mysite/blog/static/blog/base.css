@@ -1,3 +1,21 @@
+/*H1*/
+
+h1{
+  font-size: 4rem;
+  line-height: 72px;
+}
+
+#heading-xs-vision{
+  font-size: 1.5rem;
+  line-height: 24px;
+  color:orange;
+}
+
+#heading-xs-goal{
+  font-size: 1.5rem;
+  line-height: 24px;
+  color:orange;
+}
 
 
 /*NAV*/
@@ -94,6 +112,8 @@ nav{
     font-size: 60px;
   }
   
+
+
   @media screen and (max-width: 450px) {
 
   

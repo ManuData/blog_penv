@@ -20,6 +20,9 @@ def index(request):
 def base(request):
     return render(request,'blog/base.html')
 
+def article(request):
+    return render(request,'blog/article.html')
+
 def search_results(request):
     query = request.GET.get("q")
     return render(request,'blog/search_results.html',{'data':query})
