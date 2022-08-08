@@ -1,16 +1,22 @@
 {% extends "blog/base.html" %}
+{% load static %}
+
 
 
         
     {%block content%} 
 
-<h1 class="tab">VISION</h1>
-<p class = "tab" id="heading-xs-vision">Blog que me hubiera encantado descubrir hace 10 años</p>
-<h1 class ="tab" >GOAL</h1>
+<h1 class="tab">"VISION"</h1>
+<p class = "tab" id="heading-xs-vision">Blog que me hubiera encantado descubrir hace 10 años para comenzar en el mundo digital</p>
+<h1 class ="tab" >"GOAL"</h1>
 <p class = "tab"id="heading-xs-goal"> El objetivo del blog es proporcionar contenido CORE que permita establecer unas bases de conocimiento sólidas 
-    para poder progresar a nivel personal y profesional.
-    
-    </p>
+    para poder progresar a nivel personal y profesional.</p>
+<h1 class ="tab" >"VALOR"</h1>
+ <p class = "tab"id="heading-xs-goal"> Descarga pdf para entender como sacarle máximo valor al contenido</p>
+ <button class = "tab" id="button">Como sacar rendimiento blog
+    <a href="{% static 'pdf/Einreiseanmeldung.pdf' %}" download=""></a>
+</button>
+
 
 
 

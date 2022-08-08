@@ -1,20 +1,36 @@
 /*H1*/
 
 h1{
-  font-size: 4rem;
-  line-height: 72px;
+  /*font-size: 4rem;*/
+  /*line-height: 72px;*/
+  font-family: Helvetica, sans-serif;
+  color: black;
 }
 
 #heading-xs-vision{
   font-size: 1.5rem;
   line-height: 24px;
-  color:orange;
+  color:black;
 }
 
 #heading-xs-goal{
   font-size: 1.5rem;
   line-height: 24px;
-  color:orange;
+  color:black;
+}
+
+/*Button PDF*/
+#button {
+  border: none;
+  color:blue;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
 }
 
 
@@ -30,7 +46,8 @@ nav{
  
   .navBar{
     z-index:9999;
-    background-color: rgb(29, 133, 214);
+    /*background-color: rgb(29, 133, 214);*/
+    background-color: white;
     border-bottom: 1px solid black;
   }
   
