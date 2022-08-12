@@ -1,11 +1,31 @@
-/*H1*/
+/*CSS image*/
 
+#image-container{
+  padding-top:15px
+}
+/*Para ajustar la imagen y el div*/
+
+#image-container img{
+  max-width: 1200px;
+  max-height: 1500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.index-image{
+  border-radius: 10px;
+}
 h1{
   /*font-size: 4rem;*/
   /*line-height: 72px;*/
   font-family: Helvetica, sans-serif;
   color: black;
 }
+
+
+/*CSS - Main Titles*/
 
 #heading-xs-vision{
   font-size: 1.5rem;
@@ -38,6 +58,12 @@ h1{
 
 }
 
+.tab {
+  text-indent: 5%;
+  margin-left: 10%;
+  margin-right:10%;
+  
+}
 
 /*NAV*/
 
