@@ -2,6 +2,7 @@
 
 html{
     height: 200vh;
+    
 }
 
 main{
@@ -34,8 +35,7 @@ main{
 }
 
 
-
-h2{
+h2 {
     /*border-bottom: 1px solid black;*/
     text-decoration: underline;
 
