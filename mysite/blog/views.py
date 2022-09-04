@@ -23,9 +23,7 @@ def base(request):
 def article(request):
     return render(request,'blog/article.html',{'numbers':serie,"obj_as_json":json.dumps(obj)})
 
-def search_results(request):
-    query = request.GET.get("q")
-    return render(request,'blog/search_results.html',{'data':query})
+
 
     
 

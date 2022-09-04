@@ -11,3 +11,4 @@ def search_results(request):
     query = request.GET.get("q")
     return render(request,'search/search_results.html',{'data':query})
 
+

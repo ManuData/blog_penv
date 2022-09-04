@@ -22,21 +22,8 @@
           <a>.projects()</a>
           <a>.Contact()</a>
           <i style="font-size:26px" class="fa"> <a href ="https://github.com/ManuData"  target="_blank" style="text-decoration:none">&#xf09b;</i></a> 
-
-           <!--Search bar  -->
-
-            <div id="Search-Bar-Mobile">
-              <h1>Search bar</h1>
-              <form action="{% url 'search_results' %}" method="get">
-              <input name="q" type="text" placeholder="Buscar...">
-              <button>Search</button>
-              </form>
-            </div>
-    
-          <!-- End Search bar  -->
-
+        
         </div>
-
       </div>
 
       <nav class = "navBar">
@@ -47,25 +34,20 @@
           <li><i style="font-size:26px" class="fa"> <a href ="https://github.com/ManuData"  target="_blank" style="text-decoration:none"> &#xf09b;</i></a></li>
         </ul>
       </nav>
-
       <!--Search bar  -->
-      <div id = "Search-Bar-Desktop">
+      <h1>Search bar</h1>
 
-        <h1>Search bar</h1>
         <form action="{% url 'search_results' %}" method="get">
         <input name="q" type="text" placeholder="Buscar...">
-        <button>Search</button>
         </form>
-       
-        <!-- End Search bar  -->
 
-      </div>
+      <!-- End Search bar  -->
         
       <span class = "buttonMenu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#8285;</span>
 
 
 
-
+      
       <div id ="content">
 
         {% block content %}
