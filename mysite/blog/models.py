@@ -1,6 +1,6 @@
+from unicodedata import category
 from django.db import models
 
-# Create your models here.
 
 
 # Create your models here.
@@ -15,12 +15,18 @@ class Choice(models.Model):
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
 
-class Article(models.Model):
+class Articles(models.Model):
+
+    # Datos sobre el articulo
     title = models.CharField(max_length=100)
-    # Es la url del artículo separada por guiones | "hyphen"
-    slug = models.SlugField()
-    body = models.CharField(max_length=1500)
+    article_category = models.CharField(max_length=100)
+    pub_date = models.DateTimeField('date published')
     date = models.DateTimeField(auto_now_add = True)
+    body = models.CharField(max_length=1500)
+    # Es la url del artículo separada por guiones | "hyphen" (-)
+    slug = models.SlugField()
+    
+    
 
     def __str__(self):
         return self.title
