@@ -74,36 +74,37 @@ nav{
    
   
   }
- 
+
   .navBar{
     z-index:9999;
     /*background-color: rgb(29, 133, 214);*/
+    height: 50px;
     background-color: white;
     border-bottom: 1px solid black;
     
 
   }
-  
-  ul {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    box-sizing: border-box;
-    padding: 20px;
-    background:transparent;
+ /* Create a top navigation bar with a black background color  */
+  .topnav {
+  background-color:white;
+  overflow: hidden;
+  z-index: 999999;
   }
-  li {
-    list-style: none;
-    margin-right: 20px;
-    font-size: 25px;
-    font-weight: bold;
-  }
-  li a {
+
+/* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
-    color:black;
-    font-size: 1.2rem;
-    font-weight: bold;
-    
+    font-size: 17px;
+  }
+ /* Create a right-aligned (split) link inside the navigation bar */
+  .topnav a.buttonMenu {
+    float: right;
+    background-color: white;
+    color: black;
   }
   
   .buttonMenu{
@@ -165,7 +166,6 @@ nav{
   @media screen and (max-width: 450px){
 
 
-
     .buttonMenu{
       display: flex;
       position:sticky;
@@ -200,8 +200,6 @@ nav{
   
     }
 
-    
-  
     .overlay a {
       font-size: 30px
   
@@ -216,6 +214,7 @@ nav{
     .sticky{
       display:none;
     }
+
 
     .navBar.active{
       z-index:0;
@@ -234,13 +233,20 @@ nav{
       display: block;
       position: relative;
   
-      
     }
 
     #Search-Bar-Mobile {
+      white-space: nowrap;
+      overflow-x: auto;
       color:white;
-    
+     
     }
+    #Input-and-Button {
+
+      display:inline-block;
+     
+    }
+
 
     /*Conent block*/
     #content{
@@ -249,14 +255,12 @@ nav{
     }
 
 
-
     /*Button PDF*/
     #button {
   
       left:18%;
      
       
-    
     }
   
   } 
