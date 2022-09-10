@@ -27,13 +27,16 @@ main{
 
     list-style-type: disc;
     padding-top: 1rem;
-    font-size: 15px;
+    font-size: 16px;
     margin-left: 11%;
     margin-right:10%;
 
     
 }
+ p{
+    font-size: 16px;
 
+}
 
 h2 {
     /*border-bottom: 1px solid black;*/

@@ -45,7 +45,7 @@ h1{
   cursor: pointer;
   position:relative;
   left:35%;
-  background-color: black;
+  background-color: rgb(35, 33, 33);
   border: none;
   color: white;
   padding: 10px 20px;
@@ -57,6 +57,12 @@ h1{
   border-radius: 16px;
 
 }
+
+#button:hover {
+  background-color: black;
+
+}
+
 
 .tab {
   text-indent: 5%;
@@ -165,6 +171,21 @@ nav{
 
   @media screen and (max-width: 450px){
 
+    .tab{
+      font-size: 16px;
+    }
+
+    #heading-xs-vision{
+      font-size: 16px;
+    }
+    #heading-xs-goal{
+      font-size: 16px;
+    }
+    
+    #heading-xs-valor{
+      font-size: 16px;
+    }
+
 
     .buttonMenu{
       display: flex;
@@ -257,10 +278,8 @@ nav{
 
     /*Button PDF*/
     #button {
-  
+      background-color: rgb(35, 33, 33);
       left:18%;
-     
-      
     }
   
   } 
