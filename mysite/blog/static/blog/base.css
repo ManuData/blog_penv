@@ -80,6 +80,8 @@ nav{
     /*background-color: rgb(29, 133, 214);*/
     background-color: white;
     border-bottom: 1px solid black;
+    
+
   }
   
   ul {
@@ -115,7 +117,7 @@ nav{
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 99999;
     top: 0;
     right: 0;
     background-color: rgb(0,0,0);
@@ -162,6 +164,8 @@ nav{
 
   @media screen and (max-width: 450px){
 
+
+
     .buttonMenu{
       display: flex;
       position:sticky;
@@ -195,10 +199,8 @@ nav{
       z-index:9999;
   
     }
-  
-    .navBar{
-    display:none
-    }
+
+    
   
     .overlay a {
       font-size: 30px
@@ -215,21 +217,44 @@ nav{
       display:none;
     }
 
+    .navBar.active{
+      z-index:0;
+  
+      }
+   
+
     /*Search Bar*/
 
     #Search-Bar-Desktop{
       display: none;
     }
 
-    #Search-Bar-Mobile h1{
+    #Search-Bar-Mobile h1 {
       color:white;
+      display: block;
+      position: relative;
+  
+      
+    }
+
+    #Search-Bar-Mobile {
+      color:white;
+    
+    }
+
+    /*Conent block*/
+    #content{
+      padding-top:10%;
 
     }
+
+
 
     /*Button PDF*/
     #button {
   
       left:18%;
+     
       
     
     }

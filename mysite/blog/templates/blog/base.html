@@ -21,12 +21,16 @@
           <a>.who_is()</a>
           <a>.projects()</a>
           <a>.Contact()</a>
-          <i style="font-size:26px" class="fa"> <a href ="https://github.com/ManuData"  target="_blank" style="text-decoration:none">&#xf09b;</i></a> 
+          <i style="font-size:26px" class="fa"> <a href ="https://github.com/ManuData"  target="_blank" style="text-decoration:none">&#xf09b;</i></a>
+          
+          
+           
 
            <!--Search bar  -->
 
             <div id="Search-Bar-Mobile">
               <h1>Search bar</h1>
+              
               <form action="{% url 'search_results' %}" method="get">
               <input name="q" type="text" placeholder="Buscar contenido...">
               <button>Search</button>
@@ -45,7 +49,9 @@
           <li><a>.projects()</a></li>
           <li><a>.Contact()</a></li>
           <li><i style="font-size:26px" class="fa"> <a href ="https://github.com/ManuData"  target="_blank" style="text-decoration:none"> &#xf09b;</i></a></li>
+          <span class = "buttonMenu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#8285;</span> 
         </ul>
+        
       </nav>
 
       <!--Search bar  -->
@@ -61,8 +67,9 @@
 
       </div>
         
-      <span class = "buttonMenu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#8285;</span>
-
+       <!-- Open NavBar  -->
+      <!--<span class = "buttonMenu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#8285;</span>-->
+      <!-- End Search bar  -->
 
       <div id ="content">
 
@@ -79,6 +86,10 @@
           /*Efecto overlay*/
           document.getElementById("myNav").style.width = "100%";
 
+          navBar = document.getElementsByClassName("navBar");
+          navBar[0].classList.toggle('active');
+
+          
           /*Incorporación de clase Active en el menú mobile cuando se genera click */
           botonMobile = document.getElementsByClassName("buttonMenu");
           botonMobile[0].classList.toggle('active');
@@ -106,6 +117,7 @@
           /*Elimino las clases*/
           botonMobile[0].classList.remove('active');
           closeBtn[0].classList.remove('active');
+          navBar[0].classList.remove('active');
         }
         </script>
 
