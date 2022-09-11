@@ -7,14 +7,19 @@
     {%block content%} 
 
 <h1 class="tab">"VISION"</h1>
+
 <p class = "tab" id="heading-xs-vision">Blog que me hubiera encantado descubrir hace 10 años para comenzar en el mundo digital</p>
+
 <h1 class ="tab" >"GOAL"</h1>
+
 <p class = "tab"id="heading-xs-goal"> El objetivo del blog es proporcionar contenido CORE que permita establecer unas bases de conocimiento sólidas 
     para poder progresar a nivel personal y profesional.</p>
+
 <h1 class ="tab" >"VALOR"</h1>
  <p class = "tab"id="heading-xs-valor"> Descarga pdf para entender cómo sacarle máximo valor al contenido</p>
- <button class = "tab" id="button">
-    <a href="{% static 'pdf/Einreiseanmeldung.pdf'%}" download="" style="color:white;text-decoration: none;">Descargar PDF</a>
+
+ <button id="button-pdf">
+    <a href="{% static 'pdf/Einreiseanmeldung.pdf'%}" download="" >Descargar PDF</a>
 </button>
 <div id="image-container">
     <img class = "index-image" src= "{% static 'blog/images/background.jpg' %}"> 

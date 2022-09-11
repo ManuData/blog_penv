@@ -1,0 +1,284 @@
+/*BASE clean*/
+
+#image-container{
+    padding-top:15px
+  }
+  /*Para ajustar la imagen y el div*/
+  
+  #image-container img{
+    max-width: 1200px;
+    max-height: 1500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  
+  .index-image{
+    border-radius: 10px;
+  }
+
+
+
+/* CSS BASE */
+
+
+/*Paragraphs*/
+
+p {
+  margin: 0;
+  text-indent: 3ch;
+}
+
+p.pilcrow {
+   text-indent: 0;
+   display: inline;
+}
+  
+
+  
+  /*Button PDF*/
+  #button-pdf {
+    
+    cursor: pointer;
+    position:relative;
+    left:35%;
+    background-color: rgb(35, 33, 33);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    display:inline-block;
+    cursor: pointer;
+    border-radius: 16px;
+  
+  }
+  
+  #button-pdf:hover {
+    background-color: black;
+  
+  }
+  
+  
+
+  
+  /*NAV*/
+  
+  nav{
+      position:sticky;
+      top:0;
+      font-family: Roboto Mono,monospace;
+     
+    
+    }
+  
+    .navBar{
+      z-index:9999;
+      /*background-color: rgb(29, 133, 214);*/
+      height: 50px;
+      background-color: white;
+      border-bottom: 1px solid black;
+      
+  
+    }
+   /* Create a top navigation bar with a black background color  */
+    .topnav {
+    background-color:white;
+    overflow: hidden;
+    z-index: 999999;
+    }
+  
+  /* Style the links inside the navigation bar */
+    .topnav a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+   /* Create a right-aligned (split) link inside the navigation bar */
+    .topnav a.buttonMenu {
+      float: right;
+      background-color: white;
+      color: black;
+    }
+    
+    .buttonMenu{
+      display: none;
+    }
+    
+    /* MENU RESPONSIVE*/
+  
+    
+    .overlay {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 99999;
+      top: 0;
+      right: 0;
+      background-color: rgb(0,0,0);
+      overflow-x: hidden;
+      transition: 0.5s;
+    }
+    
+    .overlay-content {
+    
+      position: relative;
+      top: 25%;
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
+      font-family: Roboto Mono,monospace;
+    
+    
+    }
+    
+    .overlay a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 36px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+      
+    }
+    
+    .overlay a:hover, .overlay a:focus {
+      color: #f1f1f1;
+    }
+    
+    .overlay .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 60px;
+    }
+    
+  
+  
+    /* LOGIC FOR MOBILE*/
+  
+    @media screen and (max-width: 450px){
+
+      /* H1*/
+     
+
+
+      /*Paragraphs*/
+
+      p {
+        margin: 0;
+        text-indent: 3ch;
+      }
+      
+      p.pilcrow {
+         text-indent: 0;
+         display: inline;
+      }
+     
+        
+  
+      .buttonMenu{
+        display: flex;
+        position:sticky;
+        top:0;
+        float:right;
+        padding-top:20px;
+        z-index:9999;
+        
+      }
+      .buttonMenu.active{
+        display: flex;
+        position:sticky;
+        top:0;
+        float:right;
+        padding-top:20px;
+        pointer-events: none;
+        
+        
+      }
+    
+      .closebtn{
+        background: none;
+        border: none;
+        color:white
+      }
+    
+      .closebtn.active{
+        background: none;
+        border: none;
+        color:white;
+        z-index:9999;
+    
+      }
+  
+      .overlay a {
+        font-size: 30px
+    
+      }
+    
+      .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 21px;
+      }
+  
+      .sticky{
+        display:none;
+      }
+  
+  
+      .navBar.active{
+        z-index:0;
+    
+        }
+     
+  
+      /*Search Bar*/
+  
+      #Search-Bar-Desktop{
+        display: none;
+      }
+  
+      #Search-Bar-Mobile h1 {
+        color:white;
+        display: block;
+        position: relative;
+    
+      }
+  
+      #Search-Bar-Mobile {
+        white-space: nowrap;
+        overflow-x: auto;
+        color:white;
+       
+      }
+      #Input-and-Button {
+  
+        display:inline-block;
+       
+      }
+  
+  
+      /*Conent block*/
+      #content{
+        padding-top:10%;
+  
+      }
+  
+      /*Button PDF*/
+      #button-pdf a{
+        background-color: rgb(35, 33, 33);
+        left:18%;
+        color:white;
+        text-decoration: none; 
+        font-size: 16px;
+  
+      }
+  
+  
+    } 

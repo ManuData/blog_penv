@@ -14,11 +14,11 @@ obj = {'test1':1,'test2':2}
 
 
 def index(request):
-    return render(request,'blog/index.html',{'numbers':serie,"obj_as_json":json.dumps(obj)})
+    return render(request,'blog/index_clean.html',{'numbers':serie,"obj_as_json":json.dumps(obj)})
 
 
 def base(request):
-    return render(request,'blog/base.html')
+    return render(request,'blog/base_clean.html')
 
 def article(request):
     return render(request,'blog/article.html',{'numbers':serie,"obj_as_json":json.dumps(obj)})
