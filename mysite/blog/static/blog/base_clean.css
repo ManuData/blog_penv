@@ -1,5 +1,12 @@
 /*BASE clean*/
 
+
+body{
+  margin:1rem;
+}
+
+
+
 #image-container{
     padding-top:15px
   }
@@ -52,7 +59,7 @@ p.pilcrow {
     text-decoration: none;
     display:inline-block;
     cursor: pointer;
-    border-radius: 16px;
+    border-radius: 3px;
   
   }
   
@@ -164,8 +171,32 @@ p.pilcrow {
   
     @media screen and (max-width: 450px){
 
-      /* H1*/
+      /*Bloquear movimiento horizontal*/
+
+      html, body {
+        overflow-x: hidden;
+      }
+      nav{
+        position: fixed;
+        top: 0;
+        width: 95%
+      }
      
+      body {
+        position: relative
+      }
+
+      h2{
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      }
+
+     
+
+      /* H1*/
+      #test{
+        color:blue;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+     }
 
 
       /*Paragraphs*/
@@ -179,9 +210,8 @@ p.pilcrow {
          text-indent: 0;
          display: inline;
       }
-     
-        
-  
+      
+    
       .buttonMenu{
         display: flex;
         position:sticky;
@@ -230,6 +260,8 @@ p.pilcrow {
       .sticky{
         display:none;
       }
+
+      
   
   
       .navBar.active{
@@ -269,16 +301,14 @@ p.pilcrow {
         padding-top:10%;
   
       }
-  
-      /*Button PDF*/
-      #button-pdf a{
-        background-color: rgb(35, 33, 33);
-        left:18%;
-        color:white;
-        text-decoration: none; 
-        font-size: 16px;
-  
+
+      /*BUTTON PDF*/
+
+      #button-pdf{
+        margin-top:20px;
+        display: flex;
       }
+      
   
-  
+
     } 

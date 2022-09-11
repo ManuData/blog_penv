@@ -1,4 +1,4 @@
-{% extends "blog/base.html" %}
+{% extends "blog/base_clean.html" %}
 {% load static %}
 
 {%block content%} 
@@ -20,9 +20,9 @@
 
     <h2>"VALOR"</h2>
         <p class="pilcrow"> Descarga pdf para entender cómo
-             sacarle máximo valor al contenido</p>
+             sacarle máximo valor al contenido</p><br>
 
-             
+    
      <!-- ELEMENTO CORE: BOTONES PDF-->
     <button id="button-pdf">
         <a href="{% static 'pdf/Einreiseanmeldung.pdf'%}" download="" >Descargar PDF</a>
