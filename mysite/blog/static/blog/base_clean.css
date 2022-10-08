@@ -5,26 +5,38 @@ body{
   margin:1rem;
 }
 
-
-
-#image-container{
-    padding-top:15px
-  }
-  /*Para ajustar la imagen y el div*/
+/*
+img{
+  width: 100%;
   
-  #image-container img{
+}*/
+
+
+
+
+#image-container img{
+
+    padding-top:15px;
+    width: 100%;
+   
+
+  }
+ 
+
+  /*
+  image-container img{
     max-width: 1200px;
     max-height: 1500px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-  }
+  } 
+  
   
   .index-image{
     border-radius: 10px;
   }
-
 
 
 /* CSS BASE */
@@ -70,7 +82,6 @@ p.pilcrow {
   
   
 
-  
   /*NAV*/
   
   nav{
@@ -165,7 +176,22 @@ p.pilcrow {
       font-size: 60px;
     }
     
-  
+    /* TEST LOGIC FOR DESKTOP*/
+
+    @media screen and (min-width: 455px){
+
+      h1{
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 40px;
+        width:850px;
+        margin: 0 auto;
+        text-align: center
+
+      }
+
+    }
+
+
   
     /* LOGIC FOR MOBILE*/
   
@@ -261,8 +287,6 @@ p.pilcrow {
         display:none;
       }
 
-      
-  
   
       .navBar.active{
         z-index:0;

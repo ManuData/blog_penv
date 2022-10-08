@@ -28,14 +28,17 @@
         <a href="{% static 'pdf/Einreiseanmeldung.pdf'%}" download="" >Descargar PDF</a>
     </button>
 
-    <div id="image-container">
-        <img class = "index-image" src= "{% static 'blog/images/background.jpg' %}"> 
-    </div>
-
-    <div id="image-container">
-        <img class = "index-image" src= "{% static 'blog/images/test.png' %}"> 
-    </div>
+     <!-- ELEMENTO CORE: IMAGES-->
+  
+     
+     <div id="image-container">
+        <img class = "index-image" src= "{% static 'blog/images/test_mobile.jpg' %}" 
+        srcset= 
+        "{% static 'blog/images/test_desktop.jpg'%}"
+        alt=""> 
+    </div> 
  
+           
 
     <!-- Script: DATALAYER MVP-->
 
