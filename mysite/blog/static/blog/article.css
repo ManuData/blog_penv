@@ -1,54 +1,42 @@
 
 
+
+/*Incorporar css que aplique al contenido propio de la página del artículo*/
+
 html{
     height: 200vh;
     
 }
 
-main{
-    display: flex;
-    gap: 2rem;
-    max-width: 80%;
-    margin: 2rem auto;
-}
 
-.tab {
-    text-indent: 5%;
-    margin-left: 10%;
-    margin-right:10%;
+/* TEST LOGIC FOR DESKTOP*/
+
+@media screen and (min-width: 455px){
+
+    main{
+        display: flex;
+        gap: 2rem;
+        max-width: 80%;
+        margin: 2rem auto;
+    }
+
+    .sticky{
+        height: 10rem;
+        width: 10rem;
+        position:sticky;
+        top:20rem;
+        
+    }
+
+    #h1-article{
+        font-size: 32px;
+
+    }
+    #h2-article{
+
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 24px;
     
-}
-.idea{
-    margin-left:10%;
-    display:contents;
+   }
 
-}
-.idea > li{
-
-    list-style-type: disc;
-    padding-top: 1rem;
-    font-size: 16px;
-    margin-left: 11%;
-    margin-right:10%;
-
-    
-}
- p{
-    font-size: 16px;
-
-}
-
-h2 {
-    /*border-bottom: 1px solid black;*/
-    text-decoration: underline;
-
-}
-
-.sticky{
-    height: 10rem;
-    width: 10rem;
-    position:sticky;
-    top:20rem;
-    
-}
-
+  }

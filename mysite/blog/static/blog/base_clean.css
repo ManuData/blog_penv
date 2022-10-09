@@ -12,8 +12,6 @@ img{
 }*/
 
 
-
-
 #image-container img{
 
     padding-top:15px;
@@ -22,7 +20,6 @@ img{
 
   }
  
-
   /*
   image-container img{
     max-width: 1200px;
@@ -41,39 +38,20 @@ img{
 
 /* CSS BASE */
 
-
-/*Paragraphs*/
-
-p {
+ /*Paragraphs*/
+/*
+ p {
   margin: 0;
   text-indent: 3ch;
 }
-
 p.pilcrow {
-   text-indent: 0;
-   display: inline;
-}
-  
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  width:850px;
+  margin: 0 auto;
+  text-align: center
+} */
 
-  
-  /*Button PDF*/
-  #button-pdf {
-    
-    cursor: pointer;
-    position:relative;
-    left:35%;
-    background-color: rgb(35, 33, 33);
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    white-space: nowrap;
-    text-decoration: none;
-    display:inline-block;
-    cursor: pointer;
-    border-radius: 3px;
-  
-  }
   
   #button-pdf:hover {
     background-color: black;
@@ -182,15 +160,56 @@ p.pilcrow {
 
       h1{
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 40px;
+        font-size: 60px;
         width:850px;
         margin: 0 auto;
-        text-align: center
+        text-align: center;
+
+      }
+      #h1-index{
+        padding-bottom: 3rem;
+      }
+
+      #h2-index{
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 50px;
+        margin: 0;
+        text-align: center;
+        padding-bottom: 3rem;
+
 
       }
 
-    }
+      p.pilcrow{
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 30px;
+        width:750px;
+        padding-bottom: 3rem;
 
+      }
+
+      /*Button PDF*/
+
+      #button-pdf {
+        cursor: pointer;
+        position:relative;
+        left:45%;
+        background-color: rgb(35, 33, 33);
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        white-space: nowrap;
+        text-decoration: none;
+        display:inline-block;
+        cursor: pointer;
+        border-radius: 3px;
+      }
+
+
+    }
 
   
     /* LOGIC FOR MOBILE*/
@@ -219,7 +238,7 @@ p.pilcrow {
      
 
       /* H1*/
-      #test{
+      #h1-index{
         color:blue;
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
      }
@@ -331,8 +350,21 @@ p.pilcrow {
       #button-pdf{
         margin-top:20px;
         display: flex;
+        cursor: pointer;
+        position:relative;
+        left:30%;
+        background-color: rgb(35, 33, 33);
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        white-space: nowrap;
+        text-decoration: none;
+        display:inline-block;
+        cursor: pointer;
+        border-radius: 3px;
       }
+  }
       
   
 
-    } 
