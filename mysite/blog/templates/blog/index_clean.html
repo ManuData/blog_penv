@@ -1,5 +1,6 @@
 {% extends "blog/base_clean.html" %}
 {% load static %}
+<{% block header-indexcss %} href= "{% static 'blog/index.css' %}" {% endblock %} >
 
 {%block content%} 
 
@@ -32,9 +33,9 @@
   
      
      <div id="image-container">
-        <img class = "index-image" src= "{% static 'blog/images/test_mobile.jpg' %}" 
+        <img class = "index-image" src= "{% static 'blog/images/test.png' %}" 
         srcset= 
-        "{% static 'blog/images/test_desktop.jpg'%}"
+        "{% static 'blog/images/test.png'%}"
         alt=""> 
     </div> 
  
