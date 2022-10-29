@@ -9,6 +9,7 @@ html{
 }
 
 
+
 /* TEST LOGIC FOR DESKTOP*/
 
 @media screen and (min-width: 455px){
@@ -29,7 +30,8 @@ html{
     }
 
     #h1-article{
-        font-size: 32px;
+        font-size: 42px;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       
 
     }
@@ -40,5 +42,9 @@ html{
     
    }
 
+   p.pilcrow{
+    font-size: 18px;
+   }
 
+    
   }
