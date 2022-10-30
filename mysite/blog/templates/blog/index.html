@@ -1,47 +1,57 @@
 {% extends "blog/base.html" %}
 {% load static %}
+<{% block header-indexcss %} href= "{% static 'blog/index.css' %}" {% endblock %} >
 
-        
-    {%block content%} 
+{%block content%} 
 
-<h1 class="tab">"VISION"</h1>
+    <h1 id ="h1-index">
+        La misión del Nirvana Digital es proporcionarte unas
+        bases sólidas de conocimiento que te permitan adentrarte
+        y progresar en el mundo digital.
+    </h1>
+    
+    <h2 id="h2-index">"VISION"</h2>
+        <p class="pilcrow">Blog que me hubiera encantado descubrir hace 10 
+            años para comenzar en el mundo digital</p>
 
-<p class = "tab" id="heading-xs-vision">Blog que me hubiera encantado descubrir hace 10 años para comenzar en el mundo digital</p>
+    <h2 id="h2-index">"OBJETIVO"</h2>
+        <p class="pilcrow">El objetivo del blog es proporcionar contenido CORE que 
+            permita establecer unas bases de conocimiento sólidas 
+            para poder progresar a nivel personal y profesional.</p>
 
-<h1 class ="tab" >"GOAL"</h1>
+    <h2 id="h2-index">"VALOR"</h2>
+        <p class="pilcrow"> Descarga pdf para entender cómo
+             sacarle máximo valor al contenido</p><br>
 
-<p class = "tab"id="heading-xs-goal"> El objetivo del blog es proporcionar contenido CORE que permita establecer unas bases de conocimiento sólidas 
-    para poder progresar a nivel personal y profesional.</p>
+    
+     <!-- ELEMENTO CORE: BOTONES PDF-->
+    <button id="button-pdf">
+        <a href="{% static 'pdf/Einreiseanmeldung.pdf'%}" download="" >Descargar PDF</a>
+    </button>
 
-<h1 class ="tab" >"VALOR"</h1>
- <p class = "tab"id="heading-xs-valor"> Descarga pdf para entender cómo sacarle máximo valor al contenido</p>
-
- <button id="button-pdf">
-    <a href="{% static 'pdf/Einreiseanmeldung.pdf'%}" download="" >Descargar PDF</a>
-</button>
-<div id="image-container">
-    <img class = "index-image" src= "{% static 'blog/images/background.jpg' %}"> 
-</div>
-
-<div id="image-container">
-    <img class = "index-image" src= "{% static 'blog/images/test.png' %}"> 
-</div>
+     <!-- ELEMENTO CORE: IMAGES-->
+  
+     
+     <div id="image-container">
+        <img class = "index-image" src= "{% static 'blog/images/test.png' %}" 
+        srcset= 
+        "{% static 'blog/images/test.png'%}"
+        alt=""> 
+    </div> 
  
+           
 
-
-    <!-- Script para pintar datos en consola-->
+    <!-- Script: DATALAYER MVP-->
 
     <script type="text/javascript">
         var test_json = {
-    
             'products':[{% for number in numbers %} {
-                'id': '{{number}}'},{% endfor %}] 
+            'id': '{{number}}'},{% endfor %}] 
         };
         var obj = {{obj_as_json | safe}};
     </script>
 
-    <!-- END script -->
 
-    {%endblock%} 
+{%endblock%} 
 
 

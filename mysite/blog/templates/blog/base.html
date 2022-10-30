@@ -1,123 +1,104 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de conocimiento digital</title>
     <link rel="stylesheet" href= "{% static 'blog/base.css' %}">
-    <link rel="stylesheet" href= "{% static 'blog/article.css' %}">
-   
-    <title>Document</title>
+    {%block header%}
+    <link rel="stylesheet" {% block header-indexcss %}{% endblock %}>
+    <link rel="stylesheet" {% block header-articlecss %}{% endblock %}>
+    <link rel="stylesheet" {% block header-articlescss %}{% endblock %}>
+    {%endblock%}
     
 </head>
-
 <body> 
-
+     <!-- Menú: Focalizado para mobile  -->
     <div id="myNav" class="overlay">
         <button class="closebtn" onclick="closeNav()">&#8339;</button>
         <div class="overlay-content">
           <a>.who_is()</a>
           <a>.projects()</a>
           <a>.Contact()</a>
-          <i style="font-size:26px" class="fa"> <a href ="https://github.com/ManuData"  target="_blank" style="text-decoration:none">&#xf09b;</i></a>
+          <a href ="https://github.com/ManuData"  target="_blank" style="text-decoration:none">&#xf09b;</a>
           
-
-           <!--Search bar  -->
-
+            <!--Search bar Mobile -->
             <div id="Search-Bar-Mobile">
-              <h1>Search bar</h1>
               <div id ="Input-and-Button">
-                <form action="{% url 'search_results' %}" method="get">
-                  <input name="q" type="text" placeholder="Buscar contenido...">
-                  <button>Search</button>
-                  </form>
-
-              </div>
-              
+                    <form action="{% url 'search_results' %}" method="get">
+                        <input name="q" type="text" placeholder="Buscar contenido...">
+                        <button>Search</button>
+                    </form>
+                </div>
             </div>
-    
-          <!-- End Search bar  -->
-
+            <!-- End Search bar  -->
         </div>
-
-      </div>
-
-      <nav class = "navBar">
+    </div>
+        <!-- Menú: Focalizado para Desktop y Mobile  -->
+    <nav class = "navBar">
         <div class="topnav">
-          <a href="#home">Home</a>
-          <a href="#news">News</a>
-          <a href="#contact">Contact</a>
-          <a href="#about" class="buttonMenu" onclick="openNav()">&#8942;</a>
+            <a href="#home">Inicio</a>
+            <a href="#Artículos">Artículos</a>
+            <a href="#contact">Libros</a>
+            <a href="#about" class="buttonMenu" onclick="openNav()">&#8942;</a>
         </div>
-      </nav>
+    </nav>
 
-      <!--Search bar  -->
-      <div id = "Search-Bar-Desktop">
-
-        <h1>Search bar</h1>
+      <!--Search bar Desktop   -->
+    <div id = "Search-Bar-Desktop">
         <form action="{% url 'search_results' %}" method="get" >
-        <input name="q" type="text" placeholder="Buscar contenido...">
-        <button>Search</button>
+            <input name="q" type="text" placeholder="Buscar contenido...">
+            <button>Search</button>
         </form>
-       
         <!-- End Search bar  -->
+    </div>
 
-      </div>
-        
-
-      <div id ="content">
+         <!-- CONTENIDO ESPECÍFICO DE CADA PÁGINA -->
+    <div id ="content">
 
         {% block content %}
         {% endblock %}
-         
 
-      </div>
+    </div>
 
-      <script>
+      
+        <!-- SCRIPTS -->
+
+    <script>
 
         function openNav() {
 
-          /*Efecto overlay*/
-          document.getElementById("myNav").style.width = "100%";
+            /*Efecto overlay*/
+            document.getElementById("myNav").style.width = "100%";
+            navBar = document.getElementsByClassName("navBar");
+            navBar[0].classList.toggle('active');
 
-          navBar = document.getElementsByClassName("navBar");
-          navBar[0].classList.toggle('active');
+            /*Incorporación de clase Active en el menú mobile cuando se genera click */
 
-          
-          /*Incorporación de clase Active en el menú mobile cuando se genera click */
-          botonMobile = document.getElementsByClassName("buttonMenu");
-          botonMobile[0].classList.toggle('active');
+            botonMobile = document.getElementsByClassName("buttonMenu");
+            botonMobile[0].classList.toggle('active');
 
-           /*Incorporación de clase Active en la "X" de cierre mobile cuando se genera click */
-          closeBtn = document.getElementsByClassName("closebtn");
-          closeBtn[0].classList.toggle('active');
-
-
-          /*Efectos*/
-          /*$(botonMobile).css({transition:'opacity 0.5s ease-in-out',
-                "opacity":0});*/
-    
+            /*Incorporación de clase Active en la "X" de cierre mobile cuando se genera click */
+            closeBtn = document.getElementsByClassName("closebtn");
+            closeBtn[0].classList.toggle('active');
+            /*Efectos*/
+            /*$(botonMobile).css({transition:'opacity 0.5s ease-in-out',"opacity":0});*/
         }
         
         function closeNav() {
+            /*Efectos*/
+            document.getElementById("myNav").style.width = "0%";
+            /*$(botonMobile).css({transition:'opacity 1s ease-in-out',"opacity":1})*/
 
-          /*Efectos*/
-
-          document.getElementById("myNav").style.width = "0%";
-          /*$(botonMobile).css({transition:'opacity 1s ease-in-out',
-                "opacity":1})*/
-
-
-          /*Elimino las clases*/
-          botonMobile[0].classList.remove('active');
-          closeBtn[0].classList.remove('active');
-          navBar[0].classList.remove('active');
+            /*Elimino las clases*/
+            botonMobile[0].classList.remove('active');
+            closeBtn[0].classList.remove('active');
+            navBar[0].classList.remove('active');
         }
-        </script>
+    </script>
 
 </body>
-
 </html>
 

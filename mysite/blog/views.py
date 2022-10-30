@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import numpy as np
 import pandas as pd
-
 import json
 
 # Datos a modo de test
@@ -14,14 +13,16 @@ obj = {'test1':1,'test2':2}
 
 
 def index(request):
-    return render(request,'blog/index_clean.html',{'numbers':serie,"obj_as_json":json.dumps(obj)})
-
+    return render(request,'blog/index.html',{'numbers':serie,"obj_as_json":json.dumps(obj)})
 
 def base(request):
-    return render(request,'blog/base_clean.html')
+    return render(request,'blog/base.html')
 
 def article(request):
     return render(request,'blog/article.html',{'numbers':serie,"obj_as_json":json.dumps(obj)})
+
+def articles(request):
+    return render(request,'blog/articles.html')
 
 
 
