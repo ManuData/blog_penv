@@ -43,6 +43,7 @@ ul{
 .blog-heading h3{
     font-size:2.4rem;
     font-weight: 600;
+    
 
 
 }
@@ -85,13 +86,15 @@ ul{
 
 .blog-text span{
     color:red;
-    font: size 0.9rem;
+    font-size:0.7rem;
+    font-family: Montserrat;
 }
 
 .blog-text .blog-title{
     font-size:1.3rem;
     font-weight:500;
     color: #272727;
+    font-family: Montserrat;
     }
 
 .blog-text .blog-title:hover{
@@ -109,6 +112,7 @@ ul{
     overflow:hidden;
     text-overflow:ellipsis;
     margin:20px 0px;
+    font-family: Montserrat;
 }
 
 .blog-text a{

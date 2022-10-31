@@ -9,6 +9,9 @@ test_datos = [0,1,2,30,34,21]
 serie = pd.Series(test_datos,name="test")
 obj = {'test1':1,'test2':2}
 
+# Data Base info: 
+from .models import Articles
+
 # Create your views here.
 
 
@@ -22,7 +25,8 @@ def article(request):
     return render(request,'blog/article.html',{'numbers':serie,"obj_as_json":json.dumps(obj)})
 
 def articles(request):
-    return render(request,'blog/articles.html')
+    articles = Articles.objects.all()
+    return render(request,'blog/articles_model.html',{'articles':articles})
 
 
 

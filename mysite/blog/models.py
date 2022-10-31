@@ -15,11 +15,14 @@ class Choice(models.Model):
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
 
+
+# Metadata Articles
+
 class Articles(models.Model):
 
     # Datos sobre el articulo
     title = models.CharField(max_length=100)
-    article_category = models.CharField(max_length=100)
+    articles_description = models.CharField(max_length=100)
     pub_date = models.DateTimeField('date published')
     date = models.DateTimeField(auto_now_add = True)
     body = models.CharField(max_length=1500)
