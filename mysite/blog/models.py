@@ -1,34 +1,37 @@
 from unicodedata import category
+from unittest.util import _MAX_LENGTH
 from django.db import models
+from django.utils import timezone
+from django.contrib.auth.models import User
+from django.urls import reverse
+
 
 
 
 # Create your models here.
 
-class Question(models.Model):
-    question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
-
-
-class Choice(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=200)
-    votes = models.IntegerField(default=0)
-
-
 # Metadata Articles
 
 class Articles(models.Model):
+    STATUS_CHOICES = (
+        ('draft','Draft'),
+        ('published','Published'),
+
+    )
 
     # Datos sobre el articulo
-    title = models.CharField(max_length=100)
-    articles_description = models.CharField(max_length=100)
-    pub_date = models.DateTimeField('date published')
-    date = models.DateTimeField(auto_now_add = True)
-    body = models.CharField(max_length=1500)
-    # Es la url del artículo separada por guiones | "hyphen" (-)
-    slug = models.SlugField()
-    
+    title = models.CharField(max_length=250)
+    slug = models.SlugField(max_length=250,unique_for_date='publish')
+    author = models.ForeignKey(User,on_delete=models.CASCADE,related_name='blog_posts')
+    body = models.TextField()
+    published=models.DateTimeField(default=timezone.now)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    status = models.CharField(max_length=10,choices=STATUS_CHOICES,default='draft')
+    article_description = models.CharField(max_length=350)
+
+    def get_absolute_url(self):
+        return reverse('article-detail',kwargs={"slug":self.slug})
     
 
     def __str__(self):

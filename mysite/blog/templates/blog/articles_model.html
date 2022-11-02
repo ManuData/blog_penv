@@ -1,6 +1,7 @@
 
 {% extends "blog/base.html" %}
 {% load static %}
+{%block title%}Mi blog{%endblock%}
 <{% block header-articlescss %} href= "{% static 'blog/articles.css' %}" {% endblock %} >
 
 
@@ -28,10 +29,10 @@
     
             <!--Text-->
             <div class="blog-text">
-                <span>30 Octubre 2022 | Nirvana Digital</span>
+                <span>{{article.published}} | Nirvana Digital</span>
                 <a href="{{article.slug}}" class="blog-title">{{article.title}}</a>
-                <p>{{article.pub_date}}</p>
-                <a href="#">Leer más</a>
+                <p>{{article.article_description}}</p>
+                <a href='{{ article.get_absolute_url }}'>Leer más</a>
             </div>
         </div>
         {%endfor%}

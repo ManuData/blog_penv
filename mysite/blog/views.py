@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 import numpy as np
 import pandas as pd
@@ -21,12 +21,13 @@ def index(request):
 def base(request):
     return render(request,'blog/base.html')
 
-def article(request):
-    return render(request,'blog/article.html',{'numbers':serie,"obj_as_json":json.dumps(obj)})
+def article(request,slug): # Return one single post/article
+    return render(request,'blog/article.html')
 
-def articles(request):
+def articles(request): # Display all the posts/articles
     articles = Articles.objects.all()
     return render(request,'blog/articles_model.html',{'articles':articles})
+
 
 
 
