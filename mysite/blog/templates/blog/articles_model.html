@@ -30,7 +30,7 @@
             <!--Text-->
             <div class="blog-text">
                 <span>{{article.published}} | Nirvana Digital</span>
-                <a href="{{article.slug}}" class="blog-title">{{article.title}}</a>
+                <a href='{{ article.get_absolute_url }}' class="blog-title">{{article.title}}</a>
                 <p>{{article.article_description}}</p>
                 <a href='{{ article.get_absolute_url }}'>Leer más</a>
             </div>
