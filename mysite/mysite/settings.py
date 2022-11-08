@@ -85,13 +85,16 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
    # }
 #}
 
+import environ
+env = environ.Env()
+environ.Env.read_env()
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'blog_dev',
-        'USER': 'mvp',
-        'PASSWORD': '',
+        'USER': env('DB_USER'),
+        'PASSWORD': env("DB_PASSWORD"),
         'HOST': 'localhost',
         'PORT': '5432',
     }
