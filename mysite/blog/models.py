@@ -17,7 +17,6 @@ class Articles(models.Model):
     STATUS_CHOICES = (
         ('draft','Draft'),
         ('published','Published'),
-
     )
 
     # Datos sobre el articulo
@@ -34,7 +33,6 @@ class Articles(models.Model):
     def get_absolute_url(self):
         return reverse('article-detail',kwargs={"slug":self.slug})
     
-
     def __str__(self):
         return self.title
 
