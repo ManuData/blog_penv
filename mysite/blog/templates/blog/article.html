@@ -4,12 +4,14 @@
 {%block title%}Articulo{%endblock%}
 {% block header-articlecss %} href= "{% static 'blog/article.css' %}" {% endblock %}
     {%block content%} 
+    
 
     <main>
         <article>  
             <h1 id = "h1-article">No Awarness</h2>
+                
                 {{test}}
-                {{texto.body}}
+                {{texto.body|linebreaksbr}}
             <h2 id = "h2-article">¿Qué es un DataLayer?</h2>
             <i>(Naam to suna hi hoga) </i>
                 <ul class = "idea" style="list-style-type:disc">

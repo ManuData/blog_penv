@@ -12,6 +12,7 @@ obj = {'test1':1,'test2':2}
 # Data Base info: 
 from .models import Articles
 
+
 # Create your views here.
 
 
@@ -21,10 +22,12 @@ def index(request):
 def base(request):
     return render(request,'blog/base.html')
 
+
 def article(request,slug): # Return one single post/article
     test = slug;
     texto = Articles.objects.get(slug__exact="datalayer-episodio-1")
     return render(request,'blog/article.html',{'numbers':serie,"obj_as_json":json.dumps(obj),"test":test,"texto":texto})
+
 
 def articles(request): # Display all the posts/articles
     articles = Articles.objects.all()

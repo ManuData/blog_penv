@@ -7,8 +7,6 @@ from django.urls import reverse
 from django.contrib.postgres.fields import ArrayField
 
 
-
-
 # Create your models here.
 
 # Metadata Articles
@@ -21,7 +19,7 @@ class Articles(models.Model):
 
     # Datos sobre el articulo
     title = models.CharField(max_length=250)
-    slug = models.SlugField(max_length=250,unique_for_date='publish')
+    slug = models.SlugField(max_length=250,unique_for_date='published')
     body = models.TextField()
     published=models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
