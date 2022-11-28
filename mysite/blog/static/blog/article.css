@@ -17,7 +17,7 @@ html{
     main{
         display: flex;
         gap: 2rem;
-        max-width: 80%;
+        max-width: 60%;
         margin: 2rem auto;
     }
 
@@ -31,7 +31,7 @@ html{
 
     #h1-article{
         font-size: 42px;
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        
       
 
     }
@@ -43,8 +43,22 @@ html{
    }
 
    p.pilcrow{
-    font-size: 18px;
+    font-family: 'Roboto Mono', monospace;
+    font-size:12px;
    }
 
     
   }
+
+
+/*TEST FOR MOBILE*/
+
+@media screen and (max-width: 450px){
+
+*{
+    font-family: 'Roboto Mono', monospace;
+    font-size:14px;
+}
+
+
+}
