@@ -16,7 +16,6 @@ class Articles(models.Model):
         ('draft','Draft'),
         ('published','Published'),
     )
-
     # Datos sobre el articulo
     title = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250,unique_for_date='published')
@@ -27,6 +26,7 @@ class Articles(models.Model):
     status = models.CharField(max_length=10,choices=STATUS_CHOICES,default='draft')
     article_description = models.CharField(max_length=350)
     tags = ArrayField(models.CharField(max_length=200), blank=True)
+    image_article_list = models.ImageField(upload_to='featured_image')
 
     def get_absolute_url(self):
         return reverse('article-detail',kwargs={"slug":self.slug})
