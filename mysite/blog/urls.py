@@ -9,5 +9,6 @@ urlpatterns = [
     path('article/<slug:slug>', views.article, name='article-detail'),
     path('articles', views.articles, name='articles'),
 
+
 ]
 

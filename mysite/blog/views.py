@@ -36,9 +36,4 @@ def articles(request): # Display all the posts/articles
 
 
 
-    
-
-
-
-
 

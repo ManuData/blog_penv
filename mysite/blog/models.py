@@ -35,4 +35,7 @@ class Articles(models.Model):
         return self.title
 
 
+class Image(models.Model):
+    article = models.ForeignKey(Articles,on_delete=models.CASCADE)   
+    image = models.ImageField(upload_to='featured_image')
 
