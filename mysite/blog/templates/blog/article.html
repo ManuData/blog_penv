@@ -28,6 +28,9 @@
                 </div>
            
             </div>
+            {%for image in images%}
+            <img src ="{{image.image.url}}">
+            {%endfor%}
                  
         </article>  
         <aside class="sticky">Side Bar

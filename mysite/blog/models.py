@@ -29,7 +29,7 @@ class Articles(models.Model):
     image_article_list = models.ImageField(upload_to='featured_image')
 
     def get_absolute_url(self):
-        return reverse('article-detail',kwargs={"slug":self.slug})
+        return reverse('article-detail',kwargs={"slug":self.slug,"pk":self.pk})
     
     def __str__(self):
         return self.title
