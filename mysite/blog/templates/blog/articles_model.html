@@ -11,8 +11,8 @@
 <section id="blog">
     <!-- Heading-->
     <div class="blog-heading">
+        <h3>MARKETING DIGITAL</h3>
         <span>My recent post</span>
-        <h3>My Blog</h3>
 
     </div>
 
@@ -41,8 +41,50 @@
 </section>
 
 
+<div class="accordion-test">
+    <h3>Todo el Contenido</h3>
+
+    <button class="accordion">Base Técnica</button>
+    <div class="panel">
+      <p>Lorem ipsum...</p>
+    </div>
+    
+    <button class="accordion">Base Analítica</button>
+    <div class="panel">
+      <p>Lorem ipsum...</p>
+    </div>
+    
+    <button class="accordion">Base Estratégica</button>
+    <div class="panel">
+      <p>Lorem ipsum...</p>
+    
+    
+    </div>
+
+</div>
 
 
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
 {%endblock%} 
 
 

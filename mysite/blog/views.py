@@ -12,7 +12,6 @@ obj = {'test1':1,'test2':2}
 # Data Base info: 
 from .models import Articles
 
-
 # Create your views here.
 
 def index(request):

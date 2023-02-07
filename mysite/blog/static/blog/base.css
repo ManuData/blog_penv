@@ -6,6 +6,7 @@ body{
 }
 
 
+
   /*NAV*/
   
   nav{
@@ -99,11 +100,12 @@ body{
       right: 45px;
       font-size: 60px;
     }
-    
+
+   
+
     /* TEST LOGIC FOR DESKTOP*/
 
     @media screen and (min-width: 455px){
-
 /*
       p.pilcrow{
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -134,8 +136,54 @@ body{
       }
 
 
+      /*FOOTER*/
+
+      .footer-cointainer{
+        
+        padding-bottom: 4rem;
+        border-top: 1px solid black;
+        font-family: Roboto Mono,monospace;
+        background-color: #fee085;
+        /*margin-top: 10px;*/
+      }
+      .footer{
+        width:80%;
+        display:flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin:0 auto;
+  
+      }
+
+      .footer-heading{
+        display:flex;
+        flex-direction:column;
+        margin-right:4rem;
+
+      }
+
+      .footer-heading h2{
+        margin-bottom: 2rem;
+        }
+
+      .footer-heading a{
+        color:black;
+        text-decoration:none;
+        margin-bottom:0.5rem;
+        font-size: 12px;
+
+      }
+
+      .footer-heading a:hover{
+        color:blue}
+      
+        #brand{
+          font-size: 13px;
+         }
+
     }
 
+   
   
     /* LOGIC FOR MOBILE*/
   
@@ -160,7 +208,62 @@ body{
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       }
 
+      /*FOOTER*/
+
+      .footer-cointainer{
+        
+        padding-bottom: 4rem;
+        border-top: 1px solid black;
+        font-family: Roboto Mono,monospace;
+        background-color: #fee085;
+      }
+      .footer{
+        width:80%;
+        display:flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin:0 auto;
+
+      }
+
+      .footer-heading{
+        display:flex;
+        flex-direction:column;
+        margin-right:4rem;
+
+      }
+
+      .footer-heading h2{
+        margin-bottom: 2rem;
+        }
+
+      .footer-heading a{
+        color:black;
+        text-decoration:none;
+        margin-bottom:0.5rem;
+        font-size:12px;
+
+      }
+
+      .footer-heading a:hover{
+        color:blue
+      }
+
+
+       .footer-heading{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-left: 50px;
+
+      }  
+     
+     #brand{
+      font-size: 10px;
+     }
   
+      
       /*Paragraphs*/
       /*
 
@@ -210,7 +313,7 @@ body{
       }
   
       .overlay a {
-        font-size: 30px
+        font-size: 30px;
     
       }
     
