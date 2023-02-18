@@ -301,7 +301,9 @@ body{
       .closebtn{
         background: none;
         border: none;
-        color:white
+        color:white;
+      
+        
       }
     
       .closebtn.active{
@@ -309,6 +311,7 @@ body{
         border: none;
         color:white;
         z-index:9999;
+  
     
       }
   

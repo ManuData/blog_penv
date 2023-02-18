@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     # Incorporamos el app del search
     'search.apps.SearchConfig',
 
+    # Framework para API
+    'rest_framework',
+
 ]
 
 MIDDLEWARE = [
