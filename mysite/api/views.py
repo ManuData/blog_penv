@@ -7,7 +7,6 @@ from rest_framework.reverse import reverse
 
 
 
-
 @api_view(['GET'])
 def getData(request):
     #person = {'name':'Manu','age':32}
@@ -26,7 +25,8 @@ def articlesApi(request):
     serializer = ArticlesListSerializer(articles,many=True)
     #return Response({'articles': reverse('articles',request=request)})
     #return Response({"data":serializer.data,'urls':[reverse('articles',request=request),reverse('articles',request=request),reverse('articles',request=request)]})
-    return render(request,'blog/test.html',{'articles':serializer.data})
+    return render(request,'blog/articles_serialized.html',{'articles':serializer.data})
+    
 
 
 

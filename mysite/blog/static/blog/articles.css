@@ -59,14 +59,16 @@ ul{
 
 .blog-box{
     width:350px;
+    height:500px;
     background-color: #ffffff;
     border:1px solid #ececee;
     margin:20px;
+    
 }
 
 .blog-img{
     width:100%;
-    height:auto;
+    height:250px;
 
 }
 
@@ -79,18 +81,23 @@ ul{
 }
 
 .blog-text{
+    height:250px;
     padding:30px;
     display:flex;
     flex-direction:column;
+   
+    
 }
 
 .blog-text span{
     color:red;
     font-size:0.7rem;
     font-family: Montserrat;
+   
 }
 
 .blog-text .blog-title{
+    height:30px;
     font-size:1.3rem;
     font-weight:500;
     color: #272727;
@@ -104,6 +111,7 @@ ul{
 
 
 .blog-text p{
+    height:50px;
     color:brown;
     font-size:0.9rem;
     display:-webkit-box;
@@ -157,6 +165,8 @@ ul{
     background-color: white;
     display: none;
     overflow: hidden;
+    font-family: "IBM Plex Mono", monospace;
+    font-size:12px;
   }
 
   .accordion:after {

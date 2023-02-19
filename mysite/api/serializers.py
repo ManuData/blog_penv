@@ -18,5 +18,8 @@ class ArticlesListSerializer(serializers.ModelSerializer):
         fields = [
             'url',
             'title',
+            'published',
+            'article_description',
+            'image_article_list'
             ]
 
