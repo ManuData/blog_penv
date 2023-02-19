@@ -33,18 +33,22 @@ ul{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-family: "IBM Plex Mono", monospace;
+    /*font-family: "Montserrat";*/
+font-family: "Poppins", sans-serif;
     
 
 }
 
 .blog-heading-span{
     color:chocolate;
+    font-family: "Poppins", sans-serif;
 }
 
 .blog-heading h3{
-    font-size:2.4rem;
-    font-weight: 400;
+    font-size:3.4rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    
     
 }
 
@@ -61,7 +65,7 @@ ul{
     width:350px;
     height:500px;
     background-color: #ffffff;
-    border:1px solid #ececee;
+    border:1px solid black;
     margin:20px;
     
 }
@@ -85,14 +89,15 @@ ul{
     padding:30px;
     display:flex;
     flex-direction:column;
+    /*border-top: 1px solid;*/
    
     
 }
 
 .blog-text span{
-    color:red;
+    color:black;
     font-size:0.7rem;
-    font-family: Montserrat;
+    font-family: "Montserrat";
    
 }
 
@@ -101,19 +106,19 @@ ul{
     font-size:1.3rem;
     font-weight:500;
     color: #272727;
-    font-family: Montserrat;
+    font-family: "Montserrat";
     }
 
 .blog-text .blog-title:hover{
-    color: #f33c3f;
+    color: blue;
     transition:all ease 0.3s;
 }
 
 
 .blog-text p{
     height:50px;
-    color:brown;
-    font-size:0.9rem;
+    color:black;
+    font-size:12px;
     display:-webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient:vertical;
@@ -125,6 +130,9 @@ ul{
 
 .blog-text a{
     color:black;
+    font-family:"Monsterrat", monospace;
+    font-size:12px; 
+
 }
 
 .blog-text a:hover{
@@ -156,9 +164,9 @@ ul{
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .active, .accordion:hover {
-    background-color: white;
+    background-color:white;
   }
-  
+
   /* Style the accordion panel. Note: hidden by default */
   .panel {
     padding: 0 18px;
@@ -167,6 +175,11 @@ ul{
     overflow: hidden;
     font-family: "IBM Plex Mono", monospace;
     font-size:12px;
+  }
+
+  .panel p:hover {
+    color:#1e02da;
+
   }
 
   .accordion:after {
