@@ -25,8 +25,8 @@ def articlesApi(request):
     articles = Articles.objects.all()
     serializer = ArticlesListSerializer(articles,many=True)
     #return Response({'articles': reverse('articles',request=request)})
-    return Response({"data":serializer.data,'urls':[reverse('articles',request=request),reverse('articles',request=request),reverse('articles',request=request)]})
-    #return render(request,'blog/test.html',{'articles':serializer.data})
+    #return Response({"data":serializer.data,'urls':[reverse('articles',request=request),reverse('articles',request=request),reverse('articles',request=request)]})
+    return render(request,'blog/test.html',{'articles':serializer.data})
 
 
 
