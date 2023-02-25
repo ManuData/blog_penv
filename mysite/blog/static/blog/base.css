@@ -57,6 +57,7 @@ body{
   
     
     .overlay {
+      text-align: center;
       height: 100%;
       width: 0;
       position: fixed;
@@ -69,7 +70,7 @@ body{
     }
     
     .overlay-content {
-    
+
       position: relative;
       top: 25%;
       width: 100%;
@@ -94,12 +95,11 @@ body{
       color: #f1f1f1;
     }
     
-    .overlay .closebtn {
-      position: absolute;
-      top: 20px;
-      right: 45px;
-      font-size: 60px;
-    }
+  
+
+
+
+  
 
    
 
@@ -281,21 +281,28 @@ body{
       */
     
       .buttonMenu{
+        color:black;
+        background-color: black;
+        font-size: 15px;
         display: flex;
-        position:sticky;
+        position:relative;
         top:0;
         float:right;
         padding-top:20px;
         z-index:9999;
         
       }
+    
+
       .buttonMenu.active{
-        display: flex;
+
+        display:none;
         position:sticky;
         top:0;
         float:right;
         padding-top:20px;
         pointer-events: none;
+       
         
         
       }
@@ -303,18 +310,24 @@ body{
       .closebtn{
         background: none;
         border: none;
-        color:white;
-      
+        font-size: 40px;
+        padding-top:150px;
+        
+      }
+
+      .closebtn:after{
+        content:'\2715';
+        background: none;
+        border: none;
+        font-size: 40px;
         
       }
     
       .closebtn.active{
         background: none;
-        border: none;
         color:white;
+        border: none;
         z-index:9999;
-  
-    
       }
   
       .overlay a {
@@ -322,7 +335,7 @@ body{
     
       }
     
-      .overlay .closebtn {
+      .overlay.active{
       font-size: 40px;
       top: 15px;
       right: 21px;
@@ -336,9 +349,26 @@ body{
       .navBar.active{
         z-index:0;
     
-        }
-     
-  
+      }
+
+      /*Search bar - Mobile*/
+      
+      
+      .placeholderMobile {
+        height:30px;
+        border:none;
+        border-radius: 3px;
+        font-size: medium;
+      }
+
+      .searchButton {
+        height: 30px;
+        border:none;
+        border-radius: 3px;
+        font-size: medium;
+      }
+
+
       /*Search Bar*/
   
       #Search-Bar-Desktop{

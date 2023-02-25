@@ -8,6 +8,7 @@
     <title>{%block title%}{%endblock%}</title>
     <link rel="stylesheet" href= "{% static 'blog/base.css' %}">
     {%block header%}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200&family=Montserrat:ital,wght@0,100;0,300;0,500;0,600;0,700;0,800;1,600&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&family=Poppins:wght@300;400;500;600&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:wght@100;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" {% block header-indexcss %}{% endblock %}>
@@ -17,9 +18,9 @@
     
 </head>
 <body> 
-     <!-- Menú: Focalizado para mobile  -->
+     <!-- Menú: Focalizado para mobile &#8339; -->
     <div id="myNav" class="overlay">
-        <button class="closebtn" onclick="closeNav()">&#8339;</button>
+        <button class="closebtn" onclick="closeNav()"></button>
         <div class="overlay-content">
           <a>.who_is()</a>
           <a>.projects()</a>
@@ -30,21 +31,21 @@
             <div id="Search-Bar-Mobile">
               <div id ="Input-and-Button">
                     <form action="{% url 'search_results' %}" method="get">
-                        <input name="q" type="text" placeholder="Buscar contenido...">
-                        <button>Search</button>
+                        <input class ="placeholderMobile" name="q" type="text" placeholder="Buscar contenido...">
+                        <button type = "submit" class = "searchButton">Buscar</button>
                     </form>
                 </div>
             </div>
             <!-- End Search bar  -->
         </div>
     </div>
-        <!-- Menú: Focalizado para Desktop y Mobile  -->
+        <!-- Menú: Focalizado para Desktop y Mobile &#8942;  -->
     <nav class = "navBar">
         <div class="topnav">
             <a href="#home">INICIO</a>
             <a href="#Artículos">ARTÍCULOS</a>
             <a href="#contact">LIBROS</a>
-            <a href="#about" class="buttonMenu" onclick="openNav()">&#8942;</a>
+            <a href = "#about" class="buttonMenu" onclick="openNav()">[+]</a>
         </div>
     </nav>
 
@@ -52,7 +53,7 @@
     <div id = "Search-Bar-Desktop">
         <form action="{% url 'search_results' %}" method="get" >
             <input name="q" type="text" placeholder="Buscar contenido...">
-            <button>Search</button>
+            <button>Buscar</button>
         </form>
         <!-- End Search bar  -->
     </div>
@@ -99,13 +100,19 @@
 
     <script>
 
+
         function openNav() {
 
             /*Efecto overlay*/
-            document.getElementById("myNav").style.width = "100%";
+            setTimeout(() => {
+                document.getElementById("myNav").style.width = "100%";}, 150)
+            $.fx.speeds.xslow = 2000; // 'xslow' means 2 second
+            $(".overlay-content" ).fadeIn( "xslow")
+            /*document.getElementById("myNav").style.width = "100%";*/
+
             navBar = document.getElementsByClassName("navBar");
             navBar[0].classList.toggle('active');
-
+            
             /*Incorporación de clase Active en el menú mobile cuando se genera click */
 
             botonMobile = document.getElementsByClassName("buttonMenu");
@@ -115,20 +122,26 @@
             closeBtn = document.getElementsByClassName("closebtn");
             closeBtn[0].classList.toggle('active');
             /*Efectos*/
-            /*$(botonMobile).css({transition:'opacity 0.5s ease-in-out',"opacity":0});*/
+            
         }
         
         function closeNav() {
+
             /*Efectos*/
             document.getElementById("myNav").style.width = "0%";
-            /*$(botonMobile).css({transition:'opacity 1s ease-in-out',"opacity":1})*/
 
             /*Elimino las clases*/
             botonMobile[0].classList.remove('active');
             closeBtn[0].classList.remove('active');
             navBar[0].classList.remove('active');
+            $.fx.speeds.xfast = 100; 
+            $( ".overlay-content" ).fadeOut( "xfast")
         }
     </script>
+
+
+
+
 
 </body>
 </html>
