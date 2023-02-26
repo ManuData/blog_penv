@@ -1,7 +1,7 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from blog.models import Articles
-from .serializers import ArticlesSerializer,ArticlesListSerializer
+from blog.models import Articles,Image
+from .serializers import ArticlesSerializer,ArticlesListSerializer,ImageSerializer
 from django.shortcuts import get_object_or_404, render
 from rest_framework.reverse import reverse
 
@@ -33,6 +33,15 @@ def articleApi(request,slug,pk):
     post = get_object_or_404(Articles,pk=pk)
     serializer = ArticlesListSerializer(post)
     return Response(serializer.data)
+    
+
+
+'''@api_view(['GET'])
+def articleApi(request,slug,pk):
+    post = get_object_or_404(Articles,pk=pk)
+    serializer = ArticlesListSerializer(post)
+    return Response(serializer.data)
+    '''
 
 
 
