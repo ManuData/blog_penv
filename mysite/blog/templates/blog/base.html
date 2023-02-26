@@ -9,6 +9,7 @@
     <link rel="stylesheet" href= "{% static 'blog/base.css' %}">
     {%block header%}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200&family=Montserrat:ital,wght@0,100;0,300;0,500;0,600;0,700;0,800;1,600&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&family=Poppins:wght@300;400;500;600&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:wght@100;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" {% block header-indexcss %}{% endblock %}>
@@ -18,14 +19,14 @@
     
 </head>
 <body> 
-     <!-- Menú: Focalizado para mobile &#8339; -->
+     <!-- Menú: Focalizado para mobile &#8339; &#xf09b;-->
     <div id="myNav" class="overlay">
         <button class="closebtn" onclick="closeNav()"></button>
         <div class="overlay-content">
           <a>.who_is()</a>
           <a>.projects()</a>
           <a>.Contact()</a>
-          <a href ="https://github.com/ManuData"  target="_blank" style="text-decoration:none">&#xf09b;</a>
+        <a href ="https://github.com/ManuData"  target="_blank" style="text-decoration:none"><i class="fa fa-github" style="font-size:36px"></i></a> 
           
             <!--Search bar Mobile -->
             <div id="Search-Bar-Mobile">
@@ -107,7 +108,8 @@
             setTimeout(() => {
                 document.getElementById("myNav").style.width = "100%";}, 150)
             $.fx.speeds.xslow = 2000; // 'xslow' means 2 second
-            $(".overlay-content" ).fadeIn( "xslow")
+            $(".overlay-content" ).fadeIn( "xslow");
+            $(".closebtn").fadeIn( "xslow");
             /*document.getElementById("myNav").style.width = "100%";*/
 
             navBar = document.getElementsByClassName("navBar");
@@ -135,7 +137,9 @@
             closeBtn[0].classList.remove('active');
             navBar[0].classList.remove('active');
             $.fx.speeds.xfast = 100; 
-            $( ".overlay-content" ).fadeOut( "xfast")
+            $( ".overlay-content" ).fadeOut( "xfast");
+            $(".closebtn").fadeOut( "xfast");
+
         }
     </script>
 

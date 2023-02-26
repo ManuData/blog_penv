@@ -12,7 +12,7 @@ body{
   nav{
       position:sticky;
       top:0;
-      font-family: Roboto Mono,monospace;
+      font-family: "IBM Plex Mono", monospace;
      
     
     }
@@ -76,9 +76,7 @@ body{
       width: 100%;
       text-align: center;
       margin-top: 30px;
-      font-family: Roboto Mono,monospace;
-    
-    
+      font-family: "IBM Plex Mono", monospace;
     }
     
     .overlay a {
@@ -95,13 +93,7 @@ body{
       color: #f1f1f1;
     }
     
-  
 
-
-
-  
-
-   
 
     /* TEST LOGIC FOR DESKTOP*/
 
@@ -142,7 +134,7 @@ body{
         
         padding-bottom: 4rem;
         border-top: 1px solid black;
-        font-family: Roboto Mono,monospace;
+        font-family: "IBM Plex Mono", monospace;
         background-color: #fee085;
         /*margin-top: 10px;*/
       }
@@ -215,7 +207,7 @@ body{
         
         padding-bottom: 4rem;
         border-top: 1px solid black;
-        font-family: Roboto Mono,monospace;
+        font-family: "IBM Plex Mono", monospace;
         background-color: #fee085;
       }
       .footer{
@@ -302,18 +294,17 @@ body{
         float:right;
         padding-top:20px;
         pointer-events: none;
-       
-        
         
       }
     
       .closebtn{
+        color:white;
         background: none;
         border: none;
         font-size: 40px;
-        padding-top:150px;
-        
+        margin-top: 150px;
       }
+      /* I put after to ad content property which is the symbol*/
 
       .closebtn:after{
         content:'\2715';
@@ -328,6 +319,7 @@ body{
         color:white;
         border: none;
         z-index:9999;
+        font-size: 40px;
       }
   
       .overlay a {
@@ -359,6 +351,7 @@ body{
         border:none;
         border-radius: 3px;
         font-size: medium;
+        font-family: "IBM Plex Mono", monospace;
       }
 
       .searchButton {
@@ -366,6 +359,7 @@ body{
         border:none;
         border-radius: 3px;
         font-size: medium;
+        font-family: "IBM Plex Mono", monospace;
       }
 
 

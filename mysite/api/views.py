@@ -28,7 +28,11 @@ def articlesApi(request):
     return render(request,'blog/articles_serialized.html',{'articles':serializer.data})
     
 
-
+@api_view(['GET'])
+def articleApi(request,slug,pk):
+    post = get_object_or_404(Articles,pk=pk)
+    serializer = ArticlesListSerializer(post)
+    return Response(serializer.data)
 
 
 

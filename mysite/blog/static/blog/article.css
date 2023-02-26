@@ -71,7 +71,7 @@ html{
    }
 
    p.pilcrow{
-    font-family: 'Roboto Mono', monospace;
+    font-family: "IBM Plex Mono", monospace;
     font-size:12px;
    }
 
@@ -83,11 +83,17 @@ html{
 
 @media screen and (max-width: 450px){
 
-*{
-    font-family: 'Roboto Mono', monospace;
+    p.pilcrow{
+        font-family: "IBM Plex Mono", monospace;
+        font-size:14px;
+       }
+
+/*{
+    font-family: "IBM Plex Mono", monospace;
     font-size:14px;
+    
    
-}
+}*/
 
 }
 
