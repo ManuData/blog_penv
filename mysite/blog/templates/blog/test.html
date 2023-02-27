@@ -1,15 +1,32 @@
-{%for article in articles%}
-
-{{article.image_article_list}}
-
-<!--  <img src="{{ article.image_article_list}}" alt="">   -->>
-
-<a href='{{ article}}'>Leer más</a>
-<a href='{{ article.url}}'>link to article</a>
-<img src="{{ article.image_article_list}}" alt=""> 
 
 
+
+{%for dato in data%}
+
+    {{dato}}
 
 {%endfor%}
+
+{%for dato in data.images%}
+<img src="{{dato.image}}" alt="">
+
+{%endfor%}
+
+
+
+
+<!--{%for dato in data.images%}
+    {{dato.image}}
+    <img src="{{dato.image}}" alt="">-->
+    
+<!--  <img src="{{ article.image_article_list}}" alt="">   -->
+
+<!--<a href='{{ article}}'>Leer más</a>
+<a href='{{ article.url}}'>link to article</a>
+<img src="{{ article.image_article_list}}" alt=""> -->
+
+<!--{%endfor%} -->
+
+
 
 

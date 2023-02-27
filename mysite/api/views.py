@@ -32,7 +32,8 @@ def articlesApi(request):
 def articleApi(request,slug,pk):
     post = get_object_or_404(Articles,pk=pk)
     serializer = ArticlesListSerializer(post)
-    return Response(serializer.data)
+    #return Response(serializer.data)
+    return render(request,'blog/article_serialized.html',{'data':serializer.data})
     
 
 

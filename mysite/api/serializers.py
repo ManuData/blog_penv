@@ -49,7 +49,11 @@ class ArticlesListSerializer(serializers.ModelSerializer):
             'title',
             'published',
             'article_description',
+            'body',
             'image_article_list',
             'images'
             ]
+        
 
+    
+  

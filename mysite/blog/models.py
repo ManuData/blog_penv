@@ -34,6 +34,11 @@ class Articles(models.Model):
     def __str__(self):
         return self.title
 
+    ''' Note: For custom properties
+    @property # Custom function that I can retrieve
+    def length_tags(self):
+        return self.tags[0]
+        '''
 
 
 class Image(models.Model):

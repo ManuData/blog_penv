@@ -1,0 +1,61 @@
+
+{% extends "blog/base.html" %}
+{% load static %}
+{%block title%}Articulo{%endblock%}
+{% block header-articlecss %} href= "{% static 'blog/article.css' %}" {% endblock %}
+    {%block content%} 
+    
+
+    <main>
+        <article>  
+            <h1 id = "h1-article">No Awarness</h2>
+                <p class="pilcrow">
+                {{test}}
+                {% autoescape off %}
+                {{data.body|linebreaksbr}}
+                {% endautoescape %}
+                 </p>
+            <h2 id = "h2-article">¿Qué es un DataLayer?</h2>
+ 
+            </div>
+            {%for dato in data.images%}
+
+            <!--Image Container-->
+            <div class="blog-container">
+                <!-- Box 1-->
+                <div class="blog-box">
+                    <!-- Img-->
+                    <div class="blog-img">
+                        <img src ="{{dato.image}}"alt="">
+                    </div>
+                </div>
+           
+            </div>
+            <!-- ELEMENTO CORE: BOTONES PDF-->
+
+            {%endfor%}
+                 
+        </article>  
+        <aside class="sticky">Side Bar
+            <p>Importante</p>
+            <p>Importante</p>
+            <p>Importante</p>
+        </aside>
+    </main>
+
+    <!-- Script para pintar datos en consola-->
+
+    <script type="text/javascript">
+        var test_json = {
+    
+            'products':[{% for number in numbers %} {
+                'id': '{{number}}'},{% endfor %}] 
+        };
+        var obj = {{obj_as_json | safe}};
+    </script>
+
+    <!-- END script -->
+
+    {%endblock%} 
+
+
