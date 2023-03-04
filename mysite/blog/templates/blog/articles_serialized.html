@@ -1,7 +1,7 @@
 
 {% extends "blog/base.html" %}
 {% load static %}
-{%block title%}Mi blog{%endblock%}
+{%block title%}Articles{%endblock%}
 <{% block header-articlescss %} href= "{% static 'blog/articles.css' %}" {% endblock %} >
 
 
@@ -85,6 +85,38 @@ for (var i = 0; i < acc.length; i++) {
   });
 }
 </script>
+
+
+<script type="text/javascript">
+
+  window.dataLayer = window.dataLayer || [];
+
+
+  /* Variables de página*/
+
+  const page = window.document.title.toLowerCase()
+  const articleTitle = []
+  const articlePublished = []
+    {% for article in articles %} 
+      articleTitle.push('{{article.title}}')
+      articlePublished.push('{{article.published}}')
+    {% endfor %}
+    dataLayer.push({'event':'dataLayer',
+                    "articleTitles":articleTitle.toString().toLocaleLowerCase(),
+                    'articlePublished':articlePublished.toString().toLocaleLowerCase(),
+                    'pageTitle':page,
+                    'pageUrl':window.location.href})
+
+  Object.keys(dataLayer).sort().reduce((obj, key) => { obj[key] = dataLayer[key]; return obj;}, {});
+
+</script>
+
+
+
 {%endblock%} 
+
+
+
+
 
 
