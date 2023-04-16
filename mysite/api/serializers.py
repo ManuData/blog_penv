@@ -51,7 +51,9 @@ class ArticlesListSerializer(serializers.ModelSerializer):
             'article_description',
             'body',
             'image_article_list',
-            'images'
+            'images',
+            'id',
+            'tags',
             ]
         
 

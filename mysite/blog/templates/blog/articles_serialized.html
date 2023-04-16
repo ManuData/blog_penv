@@ -1,7 +1,7 @@
 
 {% extends "blog/base.html" %}
 {% load static %}
-{%block title%}Articles{%endblock%}
+{%block title%}Articulos{%endblock%}
 <{% block header-articlescss %} href= "{% static 'blog/articles.css' %}" {% endblock %} >
 
 
@@ -90,22 +90,29 @@ for (var i = 0; i < acc.length; i++) {
 <script type="text/javascript">
 
   window.dataLayer = window.dataLayer || [];
-
+  const userSessionId = function(){
+        return Date.now().toString(36) + Math.random().toString(36).substr(2);}
 
   /* Variables de página*/
 
   const page = window.document.title.toLowerCase()
   const articleTitle = []
   const articlePublished = []
+  const articlesId = []
     {% for article in articles %} 
       articleTitle.push('{{article.title}}')
       articlePublished.push('{{article.published}}')
+      articlesId.push('{{article.id}}')
     {% endfor %}
+
     dataLayer.push({'event':'dataLayer',
                     "articleTitles":articleTitle.toString().toLocaleLowerCase(),
-                    'articlePublished':articlePublished.toString().toLocaleLowerCase(),
+                    'articlesPublished':articlePublished.toString().toLocaleLowerCase(),
+                    'articlesId':articlesId.toString(),
                     'pageTitle':page,
-                    'pageUrl':window.location.href})
+                    'pageCategory':'articles',
+                    'pageUrl':window.location.href,
+                    'userSessionId':userSessionId()})
 
   Object.keys(dataLayer).sort().reduce((obj, key) => { obj[key] = dataLayer[key]; return obj;}, {});
 

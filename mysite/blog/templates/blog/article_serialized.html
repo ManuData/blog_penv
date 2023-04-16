@@ -34,14 +34,28 @@
             <!-- ELEMENTO CORE: BOTONES PDF-->
 
             {%endfor%}
+
+            <!-- Test boton para hacer download del pdf-->
+           
+            <div class = "container">
+                <div class = "center">
+                    <h3>Obten contenido extenso y detallado core</h3>
+                    <button id="button-pdf">
+                        <a href="{% static 'pdf/Einreiseanmeldung.pdf'%}" download="" >Descargar Guía</a>
+                        </button>
+                </div>
+            </div>
+           
+  
                  
         </article>  
-        <aside class="sticky">Side Bar
+        <!--<aside class="sticky">Side Bar
             <p>Importante</p>
             <p>Importante</p>
             <p>Importante</p>
-        </aside>
+        </aside>-->
     </main>
+
 
     <!-- Script para pintar datos en consola-->
 
@@ -55,6 +69,42 @@
     </script>
 
     <!-- END script -->
+
+
+
+    <!--Datalayer article page-->
+
+    <script type="text/javascript">
+
+        window.dataLayer = window.dataLayer || [];
+
+        const userSessionId = function(){
+        return Date.now().toString(36) + Math.random().toString(36).substr(2);}
+      
+        /* Variables de página*/
+      
+        const page = window.document.title.toLowerCase()
+        const articleTitle = '{{data.title}}'
+        const articlePublished = '{{data.published}}'
+        const articleId = '{{data.id}}'
+        const articleTags = [{% for data in data.tags %}'{{data}}', {% endfor %}]
+         
+        
+        dataLayer.push({
+                    'event':'dataLayer',
+                    "articleTitle":articleTitle.toLocaleLowerCase(),
+                    'articlePublished':articlePublished.toLocaleLowerCase(),
+                    'articleId':articleId,
+                    'articleTags':articleTags.toString().toLocaleLowerCase(),
+                    'pageTitle':page,
+                    'pageUrl':window.location.href,
+                    'pageCategory':'article detail',
+                    'userSessionId':userSessionId(),
+                    })
+        
+        Object.keys(dataLayer).sort().reduce((obj, key) => { obj[key] = dataLayer[key]; return obj;}, {});
+      
+      </script>
 
     {%endblock%} 
 

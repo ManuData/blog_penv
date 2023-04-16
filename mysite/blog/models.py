@@ -29,7 +29,7 @@ class Articles(models.Model):
     image_article_list = models.ImageField(upload_to='featured_image')
 
     def get_absolute_url(self): # 'test' es el nombre de la url dentro del proyecto API
-        return reverse('test',kwargs={"slug":self.slug,"pk":self.pk})
+        return reverse('article-detail',kwargs={"slug":self.slug,"pk":self.pk})
     
     def __str__(self):
         return self.title
@@ -46,5 +46,7 @@ class Image(models.Model):
     image = models.ImageField(upload_to='featured_image')
 
 
-
+class ManualPDF(models.Model):
+    article = models.ForeignKey(Articles,related_name = 'pdfs',on_delete=models.CASCADE)
+    pdf = models.FileField(upload_to='pdf')
 
