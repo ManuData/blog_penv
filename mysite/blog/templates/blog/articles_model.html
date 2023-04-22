@@ -42,24 +42,30 @@
 
 
 <div class="accordion-test">
-    <h3>Todo el Contenido</h3>
+  <h3>Todo el Contenido</h3>
 
-    <button class="accordion">Base Técnica</button>
-    <div class="panel">
-      <p>Lorem ipsum...</p>
-    </div>
-    
-    <button class="accordion">Base Analítica</button>
-    <div class="panel">
-      <p>Lorem ipsum...</p>
-    </div>
-    
-    <button class="accordion">Base Estratégica</button>
-    <div class="panel">
-      <p>Lorem ipsum...</p>
-    
-    
-    </div>
+  <button class="accordion">Base Técnica</button>
+  <div class="panel">
+
+      {%for article in articles%}
+      
+      <a href='{{ article.get_absolute_url }}'> <p> &#10066; {{article.title}}</p></a>
+  
+      {%endfor%}
+  </div>
+  
+  <button class="accordion">Base Analítica</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+  
+  <button class="accordion">Base Estratégica</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  
+  
+  
+  </div>
 
 </div>
 
