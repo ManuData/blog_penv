@@ -13,39 +13,77 @@
         background-color: black;
       
       }
+
+      /*Accordion CSS*/
+
+      /* Style the buttons that are used to open and close the accordion panel */
+
+.accordion-test h3{
+  font-family: "IBM Plex Mono", monospace;
+  margin-left:10%;
+
+}
+.accordion {
+  background-color: rgb(255, 254, 254);
+  color:black;
+  cursor: pointer;
+  padding: 1em;
+  width: 50%;
+  height: 40px;
+  text-align: left;
+  border:none;
+  outline: none;
+  transition: 0.4s;
+  border-bottom: 0.5px solid;
+  font-family: "IBM Plex Mono", monospace;
+  font-size:12px;
+  margin-left:10%;
+ 
+ 
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color:white;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  font-family: "IBM Plex Mono", monospace;
+  font-size:12px;
+  margin-left:10%;
+}
+
+.panel p:hover {
+  color:#1e02da;
+
+}
+
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 8px;
+  color:#1e02da;
+  float: right;
+  margin-left: 5px;
+}
+
+.accordion.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+  font-size: 8px;
+  color:blue;
+}
+  
       
       /* TEST LOGIC FOR DESKTOP*/
   
       @media screen and (min-width: 455px){
   
         
-        #h1-index{
-          padding-bottom: 3rem;
-          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-          font-size: 60px;
-          width:850px;
-          margin: 0 auto;
-          text-align: center;
-        }
-  
-        #h2-index{
-          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-          font-size: 50px;
-          margin: 0;
-          text-align: center;
-          padding-bottom: 3rem;
-  
-  
-        }
-        p.pilcrow{
-          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-          margin: 0 auto;
-          text-align: center;
-          font-size: 30px;
-          width:750px;
-          padding-bottom: 3rem;
-  
-        }
+      
   
         
       }
@@ -57,10 +95,7 @@
   
 
         /* H1*/
-        #h1-index{
-          color:blue;
-          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-       }
+      
     
         
     }

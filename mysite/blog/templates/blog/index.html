@@ -6,52 +6,61 @@
 
 {%block content%} 
 
-    <h1 id ="h1-index">
-        La misión del Nirvana Digital es proporcionarte unas
-        bases sólidas de conocimiento que te permitan adentrarte
-        y progresar en el mundo digital.
-    </h1>
-    
-    <h2 id="h2-index">"VISION"</h2>
-        <p class="pilcrow">Blog que me hubiera encantado descubrir hace 10 
-            años para comenzar en el mundo digital</p>
-
-    <h2 id="h2-index">"OBJETIVO"</h2>
-        <p class="pilcrow">El objetivo del blog es proporcionar contenido CORE que 
-            permita establecer unas bases de conocimiento sólidas 
-            para poder progresar a nivel personal y profesional.</p>
-
-    <h2 id="h2-index">"VALOR"</h2>
-        <p class="pilcrow"> Descarga pdf para entender cómo
-             sacarle máximo valor al contenido</p><br>
-
-    
-     <!-- ELEMENTO CORE: BOTONES PDF-->
-    <button id="button-pdf">
-        <a href="{% static 'pdf/Einreiseanmeldung.pdf'%}" download="" >Descargar PDF</a>
-    </button>
-
-     <!-- ELEMENTO CORE: IMAGES-->
   
-     
-     <div id="image-container">
-        <img class = "index-image" src= "{% static 'blog/images/test.png' %}" 
-        srcset= 
-        "{% static 'blog/images/test.png'%}"
-        alt=""> 
-    </div> 
- 
-           
 
-    <!-- Script: DATALAYER MVP-->
-
-    <script type="text/javascript">
-        var test_json = {
-            'products':[{% for number in numbers %} {
-            'id': '{{number}}'},{% endfor %}] 
-        };
-        var obj = {{obj_as_json | safe}};
-    </script>
+    
+  
+             <div class="accordion-test">
+                <h3>Proyectos blog</h3>
+              
+                <!--Seccion base técnica-->
+              
+                <button class="accordion">Base Técnica</button>
+                <div class="panel">
+                
+                   
+                    <a href='{{ article.get_absolute_url }}'> <p>test</p></a>
+                </div>
+                
+                <!--Seccion base analítica-->
+              
+                <button class="accordion">Base Analítica</button>
+                <div class="panel">
+              
+                    <a href='{{ article.get_absolute_url }}'> <p>test</p></a>
+                 
+              
+                </div>
+              
+                <!--Seccion base estratégica-->
+                
+                <button class="accordion">Base Estratégica</button>
+                <div class="panel">
+              
+                    <a href='{{ article.get_absolute_url }}'> <p>test</p></a>
+                 
+              
+                </div>
+              
+              </div>       
+              <script>
+                var acc = document.getElementsByClassName("accordion");
+                for (var i = 0; i < acc.length; i++) {
+                  acc[i].addEventListener("click", function() {
+                    /* Toggle between adding and removing the "active" class,
+                    to highlight the button that controls the panel */
+                    this.classList.toggle("active");
+                
+                    /* Toggle between hiding and showing the active panel */
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                      panel.style.display = "none";
+                    } else {
+                      panel.style.display = "block";
+                    }
+                  });
+                }
+                </script>
 
 
 {%endblock%} 

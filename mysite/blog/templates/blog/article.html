@@ -8,9 +8,8 @@
 
     <main>
         <article>  
-            <h1 id = "h1-article">No Awarness</h2>
+            <h1 id = "h1-article">No Awarness</h1>
                 <p class="pilcrow">
-                {{test}}
                 {% autoescape off %}
                 {{texto.body|linebreaksbr}}
                 {% endautoescape %}
@@ -65,18 +64,7 @@
         </aside>
     </main>
 
-    <!-- Script para pintar datos en consola-->
-
-    <script type="text/javascript">
-        var test_json = {
-    
-            'products':[{% for number in numbers %} {
-                'id': '{{number}}'},{% endfor %}] 
-        };
-        var obj = {{obj_as_json | safe}};
-    </script>
-
-    <!-- END script -->
+   
 
     {%endblock%} 
 

@@ -26,13 +26,15 @@ class Articles(models.Model):
     status = models.CharField(max_length=10,choices=STATUS_CHOICES,default='draft')
     article_description = models.CharField(max_length=350)
     tags = ArrayField(models.CharField(max_length=200), blank=True)
+    article_category = models.CharField(max_length=250)
     image_article_list = models.ImageField(upload_to='featured_image')
+    #Number of caracters
 
     def get_absolute_url(self): # 'test' es el nombre de la url dentro del proyecto API
         return reverse('article-detail',kwargs={"slug":self.slug,"pk":self.pk})
     
     def __str__(self):
-        return self.title
+        return self.title   
 
     ''' Note: For custom properties
     @property # Custom function that I can retrieve

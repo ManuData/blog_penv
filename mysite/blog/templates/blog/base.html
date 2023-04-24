@@ -22,16 +22,19 @@
     <script>window.dataLayer = window.dataLayer || [];
    
     dataLayer.push({'event':"pageview",
-        'pageName':'',
-        'pageId':'',
-        'pageCategory':'',
-        'articleTitle':'{{articleDataLayer.title}}',
-        'articleId':'{{articleDataLayer.id}}',
-        'articleTags':'{{articleDataLayer.tags}}',
+        'pagePath':'{{dataLayer.pagePath|escapejs}}',
+        'pageCategory':'{{dataLayer.pageCategory|escapejs}}',
+        'articleTags':'{{dataLayer.articleTags|escapejs}}',
+        'articleTitle':'{{dataLayer.articleTitle}}',
+        'articleCategory':'{{dataLayer.articleCategory}}',
+        'articleLength':'{{dataLayer.articleLength}}',
+        'articleId':'{{dataLayer.articleId}}',
+
      
     })
     
     </script>
+    <!-- console.log('{{dataLayer|escapejs}}')-->
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -174,19 +177,23 @@
 
         }
 
+
          /*Eventos para el click en descargar pdf */
 
         try{document.getElementById("button-pdf").addEventListener("click", dynamicDataLayer);
         function dynamicDataLayer() {
-        dataLayer.push({'event':"pdf download",'pageId':'{{articleDataLayer.id}}'})
+            dataLayer.push({'event':"pdf download",
+                             'pagePath':'{{dataLayer.pagePath|escapejs}}',
+                             'pageCategory':'{{dataLayer.pageCategory|escapejs}}',
+                             'articleTags':'{{dataLayer.articleTags|escapejs}}',
+                             'articleTitle':'{{dataLayer.articleTitle}}',
+                             'articleCategory':'{{dataLayer.articleCategory}}',
+                             'articleLength':'{{dataLayer.articleLength}}',
+                             'articleId':'{{dataLayer.articleId}}'})
         }}
         catch(err){
             console.log(err)
         }
-
-
-
-
     </script>
 
 
