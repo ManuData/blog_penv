@@ -7,24 +7,46 @@
 {%block content%} 
 
   
-
+<section>
+  <p>Services:</p>
+  <div>
+    <div class="mb1">
+      <div>Graphic Design</div>
+      <div>Branding</div>
+      <div>Design Research</div>
+      <div>UX/UI Design</div>
+      <div>Web Development</div>
+      <div>Art Direction</div>
+    </div>
+  </div>
+</section>
     
-  
+            <h3>Proyectos blog</h3>
              <div class="accordion-test">
-                <h3>Proyectos blog</h3>
-              
+                
                 <!--Seccion base técnica-->
               
-                <button class="accordion">Base Técnica</button>
+                <button class="accordion">Roadmap to 35K</button>
                 <div class="panel">
                 
                    
                     <a href='{{ article.get_absolute_url }}'> <p>test</p></a>
+
+                   <!-- Box 1-->
+                    <div class="blog-box">
+                      <!-- Img-->
+                      <div class="blog-img">
+                          <img src="{% static 'blog/images/coche.jpeg' %}" alt="">
+                      </div>
+                      <p>This is a test that is important to check if the text make sense</p>
+              
+                </div>
+
                 </div>
                 
                 <!--Seccion base analítica-->
               
-                <button class="accordion">Base Analítica</button>
+                <button class="accordion">Roadmap to 60K</button>
                 <div class="panel">
               
                     <a href='{{ article.get_absolute_url }}'> <p>test</p></a>
@@ -34,7 +56,7 @@
               
                 <!--Seccion base estratégica-->
                 
-                <button class="accordion">Base Estratégica</button>
+                <button class="accordion">Roadmap to 6 figures</button>
                 <div class="panel">
               
                     <a href='{{ article.get_absolute_url }}'> <p>test</p></a>

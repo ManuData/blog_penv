@@ -12,7 +12,9 @@ body{
   nav{
       position:sticky;
       top:0;
-      font-family: "IBM Plex Mono", monospace;
+      font-family: 'Neue Haas Grotesk Text Std', sans-serif; 
+  
+
      
     
     }
@@ -40,7 +42,7 @@ body{
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 12px;
     }
    /* Create a right-aligned (split) link inside the navigation bar */
     .topnav a.buttonMenu {
@@ -134,8 +136,8 @@ body{
         
         padding-bottom: 4rem;
         border-top: 1px solid black;
-        font-family: "IBM Plex Mono", monospace;
-        background-color: #fee085;
+        font-family: 'Neue Haas Grotesk Text Std', sans-serif; 
+        background-color: white;
         /*margin-top: 10px;*/
       }
       .footer{
@@ -207,8 +209,8 @@ body{
         
         padding-bottom: 4rem;
         border-top: 1px solid black;
-        font-family: "IBM Plex Mono", monospace;
-        background-color: #fee085;
+        font-family: 'Neue Haas Grotesk Text Std', sans-serif; 
+        background-color:white;
       }
       .footer{
         width:80%;
