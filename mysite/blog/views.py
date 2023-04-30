@@ -9,6 +9,17 @@ from .models import Articles
 # Data Base info Images: 
 from .models import Image
 
+
+# Forms
+
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+from django.template import RequestContext
+
+from .forms import NameForm
+
+
+
 # Create your views here.
 
 def index(request):
@@ -45,7 +56,7 @@ def article(request,slug,pk): # Return one single post/article
     images = Image.objects.filter(article_id=pk)
     # Check if able to retrieve data from data base based on slug | Nota importante: Estoy enviando siempre el texto del mismo artículo basado en la variable texto
    
-    return render(request,'blog/article.html',{"articleDataLayer":articleDataLayer,"texto":articleBody,"images":images,'dataLayer':dl})
+    return render(request,'blog/article.html',{"texto":articleBody,"images":images,'dataLayer':dl})
 
 
 def articles(request): # Display all the posts/articles
@@ -54,3 +65,20 @@ def articles(request): # Display all the posts/articles
     return render(request,'blog/articles_model.html',{'articles':articles,'dataLayer':dl})
   
 
+
+def get_name(request):
+     # if this is a POST request we need to process the form data
+    if request.method == "POST":
+        # create a form instance and populate it with data from the request:
+        form = NameForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            print(form)
+            data = form.cleaned_data['name']
+            return HttpResponse("dato was created with value"+data)
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = NameForm()
+
+    return render(request, "blog/test.html", {"form": form})

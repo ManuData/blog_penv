@@ -1,32 +1,6 @@
-
-
-
-{%for dato in data%}
-
-    {{dato}}
-
-{%endfor%}
-
-{%for dato in data.images%}
-<img src="{{dato.image}}" alt="">
-
-{%endfor%}
-
-
-
-
-<!--{%for dato in data.images%}
-    {{dato.image}}
-    <img src="{{dato.image}}" alt="">-->
-    
-<!--  <img src="{{ article.image_article_list}}" alt="">   -->
-
-<!--<a href='{{ article}}'>Leer más</a>
-<a href='{{ article.url}}'>link to article</a>
-<img src="{{ article.image_article_list}}" alt=""> -->
-
-<!--{%endfor%} -->
-
-
-
+<form action="/blog/form/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
 
