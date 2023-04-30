@@ -5,8 +5,18 @@
 
 html{
     height: 200vh;
+
+    
     
 }
+
+h1{
+    font-family: 'Neue Haas Grotesk Text Std', sans-serif;  
+    font-size: 40px;
+    border-bottom: 1px solid black;
+}
+
+
 
 .blog-container{
     display:flex;
@@ -90,21 +100,23 @@ h3 {
     }
 
     #h1-article{
-        font-size: 42px;
+        text-align: center;
+        font-size: 60px;
+
+
         
       
 
     }
     #h2-article{
-
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 24px;
+        font-family: 'Neue Haas Grotesk Text Std', sans-serif;  
+        font-size: 28px;
     
    }
 
    p.pilcrow{
-    font-family: "IBM Plex Mono", monospace;
-    font-size:12px;
+    font-family: 'Neue Haas Grotesk Text Std', sans-serif;  
+    font-size:14px;
    }
 
     
@@ -117,7 +129,7 @@ h3 {
 @media screen and (max-width: 450px){
 
     p.pilcrow{
-        font-family: "IBM Plex Mono", monospace;
+        font-family: 'Neue Haas Grotesk Text Std', sans-serif;  
         font-size:14px;
     }
 

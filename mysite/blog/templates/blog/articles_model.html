@@ -42,53 +42,30 @@
 
 
 <div class="accordion-test">
-  <h3>Todo el Contenido</h3>
 
-  <!--Seccion base técnica-->
+  <p>Todo el Contenido:</p>
 
-  <button class="accordion">Base Técnica</button>
+  {%for article in articles%}
+  <button class="accordion">Base {{article.article_category}}</button>
   <div class="panel">
-  
-      {%for article in articles%}
-      {%if article.article_category == 'tecnica' %}
-      
-      <a href='{{ article.get_absolute_url }}'> <p> &#10066; {{article.title}}</p></a>
-      {%endif%}
+    {%if article.article_category == 'tecnica' %}
+     <a href='{{ article.get_absolute_url }}'> <p> &#10066; {{article.title}}</p></a>
+    {%endif%}
 
-      {%endfor%}
-  </div>
-  
-  <!--Seccion base analítica-->
+    {%if article.article_category == 'analitica' %}
+    <a href='{{ article.get_absolute_url }}'> <p> &#10066; {{article.title}}</p></a>
+   {%endif%}
 
-  <button class="accordion">Base Analítica</button>
-  <div class="panel">
-
-  
-      {%for article in articles%}
-      {%if article.article_category == 'analitica' %}
-      
-      <a href='{{ article.get_absolute_url }}'> <p> &#10066; {{article.title}}</p></a>
-      {%endif%}
-
-      {%endfor%}
+    {%if article.article_category == 'estrategica' %}
+    <a href='{{ article.get_absolute_url }}'> <p> &#10066; {{article.title}}</p></a>
+    {%endif%}
 
   </div>
 
-  <!--Seccion base estratégica-->
-  
-  <button class="accordion">Base Estratégica</button>
-  <div class="panel">
+  {%endfor%}
+
 
   
-      {%for article in articles%}
-      {%if article.article_category == 'estrategia' %}
-      
-      <a href='{{ article.get_absolute_url }}'> <p> &#10066; {{article.title}}</p></a>
-      {%endif%}
-
-      {%endfor%}
-
-  </div>
 
 </div>
 

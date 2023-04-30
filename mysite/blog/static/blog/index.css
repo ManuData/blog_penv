@@ -32,17 +32,19 @@ section p{
   font-family: 'Neue Haas Grotesk Text Std', sans-serif;  
   margin-left:10%;
   font-size: 14px;
-  letter-spacing: .01em;
+  letter-spacing: .03em;
      
 
 }
  .mb1{
   font-family: 'Neue Haas Grotesk Text Std', sans-serif; 
-  letter-spacing: .01em;                                   
+  letter-spacing: .03em;                                   
   margin-left:10%;
   font-size: 14px;
 
  }
+
+
 
 h3{
   margin-left:10%;
@@ -60,6 +62,7 @@ p{
   font-family: 'Neue Haas Grotesk Text Std', sans-serif; 
   margin-left:0%;
   font-size: 14px;
+  margin-bottom: 5rem;
 
 }
 .accordion {
@@ -77,7 +80,8 @@ p{
   font-family: 'Neue Haas Grotesk Text Std', sans-serif; 
   font-size:14px;
   margin-left:10%;
-  letter-spacing: .01em; 
+  letter-spacing: 0.05em; 
+  
  
  
  
@@ -157,30 +161,29 @@ p{
       @media screen and (max-width: 450px){
   
 
-        
         .accordion{
 
           width: 100%;
-          margin-left:0%;
+          margin-left:0;
 
         }
         .mb1{
 
           width: 100%;
-          margin-left:0%;
+          margin-left:0;
 
         }
         .accordion-test{
 
           width: 100%;
-          margin-left:0%;
+          margin-left:0;
 
         }
 
         h3{
 
           width: 100%;
-          margin-left:0%;
+          margin-left:0;
 
         }
 
@@ -192,7 +195,15 @@ p{
         
         }
 
-        /* H1*/
+        .panel{
+          margin-left:0;
+        }
+
+        .blog-box{
+          margin:20px 10px;
+          width:100%;
+          margin-left:0;
+      }
         
       
     

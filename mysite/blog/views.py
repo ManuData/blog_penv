@@ -1,7 +1,5 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
-import numpy as np
-import pandas as pd
 import json
 
 
@@ -56,4 +54,3 @@ def articles(request): # Display all the posts/articles
     return render(request,'blog/articles_model.html',{'articles':articles,'dataLayer':dl})
   
 
-    

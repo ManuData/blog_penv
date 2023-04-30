@@ -4,19 +4,18 @@
 {%block title%}Articulo{%endblock%}
 {% block header-articlecss %} href= "{% static 'blog/article.css' %}" {% endblock %}
     {%block content%} 
+    
 
     <main>
-
         <article>  
-         
             <h1 id = "h1-article">No Awarness</h1>
-            <h2 id = "h2-article">Example</h2>
                 <p class="pilcrow">
                 {% autoescape off %}
                 {{texto.body|linebreaksbr}}
                 {% endautoescape %}
                  </p>
-         
+            <h2 id = "h2-article">¿Qué es un DataLayer?</h2>
+
             <!--Image Container-->
             <div class="blog-container">
                 <!-- Box 1-->
@@ -26,10 +25,8 @@
                         <img src="{% static 'blog/images/test2.png' %}" alt="">
                     </div>
                 </div>
-
+           
             </div>
-
-
             {%for image in images%}
 
             <!--Image Container-->
@@ -47,37 +44,28 @@
 
             {%endfor%}
 
-            <footer>
-                <p>
-                  Posted on
-                  <time datetime="2015-05-15 19:00">May 15</time>
-                  by Staff.
-                </p>
-              </footer>
-
-
-            <!-- Test boton para hacer download del pdf-->
+    <!-- Test boton para hacer download del pdf-->
            
-            <div class = "container">
-                <div class = "center">
-                    <h3>Obten contenido extenso y detallado core</h3>
-                    <button id="button-pdf">
-                        <a href="{% static 'pdf/Einreiseanmeldung.pdf'%}" download="" >Descargar Guía</a>
-                    </button>
-                </div>
-            </div>
-    
+    <div class = "container">
+        <div class = "center">
+            <h3>Obten contenido extenso y detallado core</h3>
+            <button id="button-pdf">
+                <a href="{% static 'pdf/Einreiseanmeldung.pdf'%}" download="" >Descargar Guía</a>
+                </button>
+        </div>
+    </div>
+   
                  
         </article>  
-            <aside class="sticky">Side Bar
-                <p>Importante</p>
-                <p>Importante</p>
-                <p>Importante</p>
-            </aside>
+        <aside class="sticky">Side Bar
+            <p>Importante</p>
+            <p>Importante</p>
+            <p>Importante</p>
+        </aside>
     </main>
 
    
 
-{%endblock%} 
+    {%endblock%} 
 
 
