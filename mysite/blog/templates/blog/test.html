@@ -1,5 +1,13 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
+{% extends "blog/base.html" %}
+{% load static %}
+
+{%block title%}Pagina inicio{%endblock%}
+<{% block header-testcss %} href= "{% static 'blog/test.css' %}" {% endblock %} >
+
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>-->
+{%block content%} 
 
 <form method="POST" id="post-form">
     {% csrf_token %}
@@ -9,9 +17,14 @@
     </div>
      <div class="form-group">
        <label>Description</label>
-       <textarea class="form-control" id="description" placeholder="Description"></textarea>
+       <select id="salary-ranges" name="ranges">
+            <option value="select">Selecciona un rango</option>
+            <option value="menos de 35K">Menos de 35K</option>
+            <option value="Entre 35k-60k">Entre 35K y 60K</option>
+            <option value="Más de 60k">Más de 60 K</option>
+     </select>
      </div>
-     <button type="submit" class="btn btn-primary">Submit</button>
+     <button id="submit" type="submit" class="btn btn-primary">Submit</button>
      <div id="result"></div>
   </form>
 
@@ -19,4 +32,5 @@
 
 <script src="../../static/blog/scripts/main.js"></script>   
 
+{%endblock%} 
 

@@ -89,7 +89,6 @@ def create_post(request):
         response_data['description'] = description
        
         return JsonResponse(response_data)
-    
     return render(request, 'blog/test.html',{'response_data':response_data})
 
 

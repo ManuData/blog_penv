@@ -1,0 +1,86 @@
+html{
+
+ height: 200vh;
+}
+
+
+#post-form {
+    position: relative;
+    width: 500px;
+    margin: 50px auto 100px auto;
+  }
+
+
+  input {
+    font-family: 'Neue Haas Grotesk Text Std', sans-serif;
+    font-size: 0.875em;
+    width: 470px;
+    height: 50px;
+    padding: 0px 15px 0px 15px;
+    
+    background: transparent;
+    outline: none;
+    color: #726659;
+    
+    border: solid 1px #b3aca7;
+    border-bottom: none;
+    
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+  }
+  
+  input:hover {
+    background: #b3aca7;
+    color: #e2dedb;
+  }
+
+  #salary-ranges {
+    font-family: 'Neue Haas Grotesk Text Std', sans-serif;
+    font-size: 0.875em;
+    width: 500px;
+    height: 50px;
+    padding: 0px 15px 0px 15px;
+    
+    background: transparent;
+    outline: none;
+    color: #726659;
+    
+    border: solid 1px #b3aca7;
+    border-bottom: none;
+    
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+  }
+  
+  #salary-ranges:hover {
+    background: #b3aca7;
+    color: #e2dedb;
+  }
+
+
+  #submit {
+    width: 502px;
+    
+    padding: 0;
+    margin: -5px 0px 0px 0px;
+    
+    font-family: 'Lato', sans-serif;
+    font-size: 0.875em;
+    color: #b3aca7;
+    
+    outline:none;
+    cursor: pointer;
+    
+    border: solid 1px #b3aca7;
+    border-top: none;
+  }
+  
+  #submit:hover {
+    color: #e2dedb;
+  }
+
+  

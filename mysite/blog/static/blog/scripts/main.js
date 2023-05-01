@@ -6,13 +6,15 @@ $(document).on('submit', '#post-form',function(e){
         url:'/blog/create-post/',
         data:{
             title:$('#title').val(),
-            description:$('#description').val(),
+            description:$('#salary-ranges').val(),
             csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
             action: 'post'
         },
         success:function(json){
             console.log(json)
-            $( "#result" ).empty().append(json.title);
+            $( "#result" ).empty().append(json.title + "-"+json.description);
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({'field1':json.title,'field2':json.description})
              
             
         },
