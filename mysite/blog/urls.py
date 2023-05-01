@@ -9,6 +9,8 @@ urlpatterns = [
     #path('base', views.base, name='base'),
     path('article/<slug:slug>/<int:pk>', views.article, name='article-detail'),
     path('articles', views.articles, name='articles'),
-    path('form/', views.get_name, name='form'),
+    path('create-post/', views.create_post, name='form_ajax'),
+     
 
 ] 
+

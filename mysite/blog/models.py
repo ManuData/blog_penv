@@ -52,3 +52,14 @@ class ManualPDF(models.Model):
     article = models.ForeignKey(Articles,related_name = 'pdfs',on_delete=models.CASCADE)
     pdf = models.FileField(upload_to='pdf')
 
+
+
+# Post model para AJAX
+
+class Post (models.Model):
+    title = models.CharField(max_length=50)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.title
+    

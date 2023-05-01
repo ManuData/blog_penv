@@ -1,6 +1,22 @@
-<form action="/blog/form/" method="post">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+
+<form method="POST" id="post-form">
     {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit">
-</form>
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" class="form-control" id="title" placeholder="Title">
+    </div>
+     <div class="form-group">
+       <label>Description</label>
+       <textarea class="form-control" id="description" placeholder="Description"></textarea>
+     </div>
+     <button type="submit" class="btn btn-primary">Submit</button>
+     <div id="result"></div>
+  </form>
+
+
+
+<script src="../../static/blog/scripts/main.js"></script>   
+
 

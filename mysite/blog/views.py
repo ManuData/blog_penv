@@ -12,12 +12,8 @@ from .models import Image
 
 # Forms
 
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
-from django.template import RequestContext
-
-from .forms import NameForm
-
+from .models import Post
+from django.http import JsonResponse
 
 
 # Create your views here.
@@ -65,20 +61,72 @@ def articles(request): # Display all the posts/articles
     return render(request,'blog/articles_model.html',{'articles':articles,'dataLayer':dl})
   
 
+# For Ajax request
+'''
+def create_post(request):
+    response_data = {}
+    if request.POST.get('action') == 'post':
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        response_data['title'] = title
+        response_data['description'] = description
+    
+        return JsonResponse(response_data)
 
-def get_name(request):
-     # if this is a POST request we need to process the form data
-    if request.method == "POST":
-        # create a form instance and populate it with data from the request:
-        form = NameForm(request.POST)
-        # check whether it's valid:
-        if form.is_valid():
-            print(form)
-            data = form.cleaned_data['name']
-            return HttpResponse("dato was created with value"+data)
+    #return render(request, 'blog/test.html', {'posts':posts})
+    return render(request, 'blog/test.html', {'response_data':response_data})
 
-    # if a GET (or any other method) we'll create a blank form
+'''
+
+def create_post(request):
+    response_data = {}
+    if request.POST.get('action') == 'post':
+        
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+
+        response_data['title'] = title
+        response_data['description'] = description
+       
+        return JsonResponse(response_data)
+    
+    return render(request, 'blog/test.html',{'response_data':response_data})
+
+
+
+
+
+
+'''
+def create_post(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+
+        response_data = {}
+        response_data['title'] = title
+        response_data['description'] = description
+       
+        return HttpResponse(
+            json.dumps(response_data),
+            content_type="application/json"
+        )
     else:
-        form = NameForm()
+        return HttpResponse(
+            json.dumps({"nothing to see": "this isn't happening"}),
+            content_type="application/json"
+        )
 
-    return render(request, "blog/test.html", {"form": form})
+        '''
+
+    
+
+
+
+
+
+
+    
+'''Post.objects.create(
+    title = title,
+    description = description,)'''
