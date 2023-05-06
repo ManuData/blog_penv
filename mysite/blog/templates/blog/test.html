@@ -7,6 +7,7 @@
 
 
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>-->
+
 {%block content%} 
 <header>6 Figures in 3 Jumps</header>
 
@@ -31,13 +32,17 @@
      </button>
      <div id="result"></div>
   </form>
+  <div id="snackbar">Feedback enviado</div>
+  
  
 
   <script>
     const theButton = document.querySelector(".btn.btn-primary");
-    var element = $("#title")
+    var firstInput = $("#title").val()
+    var secondInput = $("#salary-ranges").val()
     theButton.addEventListener("click", () => {
-        if(element.val() == ""){
+        if(firstInput == ""){
+            console.log("test");
 
         }else{
             $(document).one('submit', '#post-form',function(e){
@@ -57,9 +62,7 @@
                     //setTimeout(() => {$( "#result" ).empty().append("Gracias por enviar su información");}, 1600)
             
                     window.dataLayer = window.dataLayer || [];
-                    dataLayer.push({'field1':json.title,'field2':json.description})
-                    
-                       
+                    dataLayer.push({'field1':json.title,'field2':json.description})    
                     
                 },
                 error : function(xhr,errmsg,err) {
@@ -68,13 +71,25 @@
     });
 });
 
-            theButton.classList.add("button--loading");
+        theButton.classList.add("button--loading");
         setTimeout(() => {theButton.classList.remove("button--loading");
         $('#salary-ranges').prop('selectedIndex', 0);
-        $('#title').val('')}, 1600)}   
+        $('#title').val('')}, 1600)}
+        setTimeout(() => {myFunction()}, 1600)
+
         
         
     });
+
+    function myFunction() {
+        // Get the snackbar DIV
+        var x = document.getElementById("snackbar"); 
+        // Add the "show" class to DIV
+        x.className = "show";
+
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
+     }
 
 </script>
 
