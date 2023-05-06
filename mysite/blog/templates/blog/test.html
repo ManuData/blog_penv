@@ -8,15 +8,17 @@
 
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>-->
 {%block content%} 
+<header>6 Figures in 3 Jumps</header>
+
 
 <form method="POST" id="post-form">
     {% csrf_token %}
     <div class="form-group">
-      <label>Title</label>
-      <input type="text" class="form-control" id="title" placeholder="Title">
+      <label></label>
+      <input type="text" class="form-control" id="title" placeholder="...Digital Analyst">
     </div>
      <div class="form-group">
-       <label>Description</label>
+       <label></label>
        <select id="salary-ranges" name="ranges">
             <option value="select">Selecciona un rango</option>
             <option value="menos de 35K">Menos de 35K</option>
@@ -24,13 +26,68 @@
             <option value="Más de 60k">Más de 60 K</option>
      </select>
      </div>
-     <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+     <button id="submit" type="submit" class="btn btn-primary">
+        <span class="button__text">Enviar</span>
+     </button>
      <div id="result"></div>
   </form>
+ 
+
+  <script>
+    const theButton = document.querySelector(".btn.btn-primary");
+    var element = $("#title")
+    theButton.addEventListener("click", () => {
+        if(element.val() == ""){
+
+        }else{
+            $(document).one('submit', '#post-form',function(e){
+            e.preventDefault();
+            $.ajax({
+                type:'POST',
+                url:'/blog/create-post/',
+                data:{
+                    title:$('#title').val().toLowerCase(),
+                    description:$('#salary-ranges').val().toLowerCase(),
+                    csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                    action: 'post'
+                },
+                success:function(json){
+                    console.log(json)
+                    //$( "#result" ).empty().append(json.title + "-"+json.description);
+                    //setTimeout(() => {$( "#result" ).empty().append("Gracias por enviar su información");}, 1600)
+            
+                    window.dataLayer = window.dataLayer || [];
+                    dataLayer.push({'field1':json.title,'field2':json.description})
+                    
+                       
+                    
+                },
+                error : function(xhr,errmsg,err) {
+                console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+            }
+    });
+});
+
+            theButton.classList.add("button--loading");
+        setTimeout(() => {theButton.classList.remove("button--loading");
+        $('#salary-ranges').prop('selectedIndex', 0);
+        $('#title').val('')}, 1600)}   
+        
+        
+    });
+
+</script>
 
 
 
-<script src="../../static/blog/scripts/main.js"></script>   
+<!--
+    <script src="../../static/blog/scripts/main.js"></script>
+-->
+    
+
+
+
+
 
 {%endblock%} 
 

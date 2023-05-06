@@ -1,28 +1,62 @@
 html{
 
  height: 200vh;
+
 }
+
+/*Header*/
+header {
+    font-family: 'Neue Haas Grotesk Text Std', sans-serif;
+    position: relative;
+    margin: 100px 0 25px 0;
+    font-size: 2.3em;
+    text-align: center;
+    letter-spacing: 7px;
+  }
+
+
+
+#Search-Bar-Desktop{
+    display:none;
+
+}
+
+#Search-Bar-Mobile{
+    display:none;
+}
+
 
 
 #post-form {
     position: relative;
     width: 500px;
     margin: 50px auto 100px auto;
+    color:black;
   }
+
+  ::placeholder{
+
+    color:#b3aca7;
+
+  }
+ 
 
 
   input {
     font-family: 'Neue Haas Grotesk Text Std', sans-serif;
-    font-size: 0.875em;
+    color: #b3aca7;
+    font-size: 14px;
     width: 470px;
     height: 50px;
     padding: 0px 15px 0px 15px;
     
     background: transparent;
     outline: none;
-    color: #726659;
     
-    border: solid 1px #b3aca7;
+    /*color: #726659;*/
+    border: solid 1px black;
+    
+    /*border: solid 1px #b3aca7;*/
     border-bottom: none;
     
     transition: all 0.3s ease-in-out;
@@ -32,22 +66,28 @@ html{
   }
   
   input:hover {
-    background: #b3aca7;
-    color: #e2dedb;
+    /*background: #b3aca7;*/
+    color: black;
+    
+    
+    /*color: #e2dedb;*/
   }
+
+
 
   #salary-ranges {
     font-family: 'Neue Haas Grotesk Text Std', sans-serif;
     font-size: 0.875em;
-    width: 500px;
+    width: 502px;
     height: 50px;
     padding: 0px 15px 0px 15px;
     
     background: transparent;
     outline: none;
-    color: #726659;
+    color: #b3aca7;
+    /*color: #726659;*/
     
-    border: solid 1px #b3aca7;
+    border: solid 1px black;
     border-bottom: none;
     
     transition: all 0.3s ease-in-out;
@@ -57,30 +97,130 @@ html{
   }
   
   #salary-ranges:hover {
-    background: #b3aca7;
-    color: #e2dedb;
+    /*background: #b3aca7;
+    color: #e2dedb;*/
+    color:black;
   }
 
 
   #submit {
     width: 502px;
+    height: 35px;
+
     
     padding: 0;
     margin: -5px 0px 0px 0px;
     
-    font-family: 'Lato', sans-serif;
+    font-family: 'Neue Haas Grotesk Text Std', sans-serif;
     font-size: 0.875em;
-    color: #b3aca7;
+    /*color: #b3aca7;*/
+    color:black;
+    background-color:#d7d7d7;
     
     outline:none;
     cursor: pointer;
     
-    border: solid 1px #b3aca7;
+    border: solid 1px black;
     border-top: none;
   }
   
   #submit:hover {
-    color: #e2dedb;
+    color: white;
+    background-color: black;;
+   
   }
 
+  /*Efectos loading*/
+
+
+
+  #submit {
+    position: relative;
+    padding: 8px 16px;
+    background: black;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+    #submit:active {
+        background: black
+    }
+
+  .button__text {
+    font: 'Neue Haas Grotesk Text Std', sans-serif;
+    color: #ffffff;
+    transition: all 0.2s;
+}
+
+.button--loading .button__text {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+
+.button--loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
   
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+
+  /* MOBILE*/
+
+
+  @media screen and (max-width: 450px){
+
+    #post-form{
+
+        width: 100%;
+        margin-left:0;
+    
+      }
+
+    input{
+        width: 100%;
+        margin-left:0;
+    } 
+    #salary-ranges{
+
+        width: 100%;
+        margin-left:0;
+        
+    }
+
+    #submit{
+
+        width: 100%;
+        margin-left:0;
+
+    }
+
+
+
+
+
+  }
+
+ 
