@@ -40,10 +40,20 @@
     const theButton = document.querySelector(".btn.btn-primary");
     var firstInput = $("#title")
     var secondInput = $("#salary-ranges") 
-    theButton.addEventListener("click", () => {
-        if(firstInput.val() == "" || secondInput.val() == 'select'){ 
+    theButton.addEventListener("click", (event) => {
+        if(firstInput.val() == "" || secondInput.val() == 'select'){
+            event.preventDefault()
+            theButton.classList.add("button--loading")
+            setTimeout(() => {
+                        theButton.classList.remove("button--loading");
+                        $('#title').val('');
+                        $('#salary-ranges').prop('selectedIndex', 0);
+                        }, 400)
+            setTimeout(() => {myFunction("Introduce información en los 2 campos")}, 400)
 
         }else{
+
+            // AJAX call
             $(document).one('submit', '#post-form',function(e){
             e.preventDefault();
             $.ajax({
@@ -63,18 +73,25 @@
                     window.dataLayer = window.dataLayer || [];
                     dataLayer.push({'field1':json.title,'field2':json.description})    
                     
-                },
-                error : function(xhr,errmsg,err) {
-                console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
-            }
-        });
-    });
+                    },
+                error : function(xhr,errmsg,err){
+                    console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+                    }
+                });
+            });
 
-        theButton.classList.add("button--loading");
-        setTimeout(() => {theButton.classList.remove("button--loading");
-        $('#salary-ranges').prop('selectedIndex', 0);
-        $('#title').val('')}, 1600)}
-        setTimeout(() => {myFunction("Información enviada")}, 1600)
+            theButton.classList.add("button--loading")
+            setTimeout(() => {
+                            theButton.classList.remove("button--loading");
+                            $('#salary-ranges').prop('selectedIndex', 0);
+                            $('#title').val('')
+                                }, 1600)
+            setTimeout(() => {myFunction("Información enviada")}, 1600)
+
+
+        }
+
+
     });
 
 
@@ -85,10 +102,9 @@
         $( "#snackbar" ).empty().append(text);
         // Add the "show" class to DIV
         x.className = "show";
-
         // After 3 seconds, remove the show class from DIV
-        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
-     }
+        setTimeout(function(){ x.className = x.className.replace("show", "");}, 2000);
+    }
 
 </script>
 
