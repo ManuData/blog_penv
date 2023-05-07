@@ -16,7 +16,7 @@
     <link rel="stylesheet" {% block header-indexcss %}{% endblock %}>
     <link rel="stylesheet" {% block header-articlecss %}{% endblock %}>
     <link rel="stylesheet" {% block header-articlescss %}{% endblock %}>
-    <link rel="stylesheet" {% block header-testcss %}{% endblock %}>
+    <link rel="stylesheet" {% block header-formLeadscss %}{% endblock %}>
 
     
                 
@@ -81,8 +81,8 @@
         <!-- Menú: Focalizado para Desktop y Mobile &#8942;  -->
     <nav class = "navBar">
         <div class="topnav">
-            <a href="#home">INICIO</a>
-            <a href="#Artículos">ARTÍCULOS</a>
+            <a href="{% url 'index' %}">INICIO</a> <!--Para hacer testing incluir # para marcar hacer fake en el click-->
+            <a href="{% url 'articles' %}">ARTÍCULOS</a>
             <a href="#contact">LIBROS</a>
             <a href = "#about" class="buttonMenu" onclick="openNav()">[+]</a>
         </div>

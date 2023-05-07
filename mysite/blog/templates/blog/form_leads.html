@@ -1,0 +1,48 @@
+
+{% extends "blog/base.html" %}
+{% load static %}
+
+{%block title%}Pagina inicio{%endblock%}
+{% block header-formLeadscss %} href= "{% static 'blog/form_leads.css' %}" {% endblock %}
+
+{%block content%} 
+<header>"6 Figures in 3 Jumps"</header>
+<h2 id="h2-form">Planifica tus 100.000€</h2>
+
+
+<form method="POST" id="post-form">
+    {% csrf_token %}
+    <!-- NOTA: En caso de querer incorporar el email para los leads
+      <div class="form-group"> 
+      <label></label>
+      <input type="text" class="form-control" id="title" placeholder="email@gmail.com">
+    </div> -->
+    <div class="form-group">
+      <label></label>
+      <input type="text" class="form-control" id="title" placeholder="...Digital Analyst">
+    </div>
+     <div class="form-group">
+       <label></label>
+       <select id="salary-ranges" name="ranges">
+            <option value="select">Selecciona un rango</option>
+            <option value="menos de 35K">Menos de 35K</option>
+            <option value="Entre 35k-60k">Entre 35K y 60K</option>
+            <option value="Más de 60k">Más de 60 K</option>
+     </select>
+     </div>
+     <button id="submit" type="submit" class="btn btn-primary">
+        <span class="button__text">Enviar</span>
+     </button>
+     <div id="result"></div>
+  </form>
+  <div id="snackbar"></div>
+  
+<script src="../../static/blog/scripts/main.js"></script>
+
+    
+
+
+
+
+
+{%endblock%} 

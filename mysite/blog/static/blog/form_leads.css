@@ -1,6 +1,6 @@
 html{
 
- height: 200vh;
+ /*height: 200vh;*/
 
 }
 
@@ -12,6 +12,17 @@ header {
     font-size: 2.3em;
     text-align: center;
     letter-spacing: 7px;
+  }
+
+  #h2-form{
+    font-family: 'Neue Haas Grotesk Text Std', sans-serif;
+    position: relative;
+    /*margin: 100px 0 25px 0;*/
+    font-size: 1.3em;
+    text-align: center;
+    letter-spacing: 4px;
+    
+
   }
 
 
