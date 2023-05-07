@@ -32,17 +32,16 @@
      </button>
      <div id="result"></div>
   </form>
-  <div id="snackbar">Feedback enviado</div>
+  <div id="snackbar"></div>
   
  
 
   <script>
     const theButton = document.querySelector(".btn.btn-primary");
-    var firstInput = $("#title").val()
-    var secondInput = $("#salary-ranges").val()
+    var firstInput = $("#title")
+    var secondInput = $("#salary-ranges") 
     theButton.addEventListener("click", () => {
-        if(firstInput == ""){
-            console.log("test");
+        if(firstInput.val() == "" || secondInput.val() == 'select'){ 
 
         }else{
             $(document).one('submit', '#post-form',function(e){
@@ -68,22 +67,22 @@
                 error : function(xhr,errmsg,err) {
                 console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
             }
+        });
     });
-});
 
         theButton.classList.add("button--loading");
         setTimeout(() => {theButton.classList.remove("button--loading");
         $('#salary-ranges').prop('selectedIndex', 0);
         $('#title').val('')}, 1600)}
-        setTimeout(() => {myFunction()}, 1600)
-
-        
-        
+        setTimeout(() => {myFunction("Información enviada")}, 1600)
     });
 
-    function myFunction() {
+
+    function myFunction(text) {
         // Get the snackbar DIV
         var x = document.getElementById("snackbar"); 
+        // Add Info to the DIV
+        $( "#snackbar" ).empty().append(text);
         // Add the "show" class to DIV
         x.className = "show";
 
@@ -105,4 +104,3 @@
 
 
 {%endblock%} 
-
