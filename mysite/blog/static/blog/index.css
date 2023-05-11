@@ -63,6 +63,7 @@ p{
   margin-left:0%;
   font-size: 14px;
   margin-bottom: 5rem;
+ 
 
 }
 .accordion {
@@ -82,10 +83,23 @@ p{
   margin-left:10%;
   letter-spacing: 0.05em; 
   
+  
  
  
  
 }
+
+/*Test accordion effect smooth*/
+
+.collapsing {
+  transition: height 0.4s ease;
+}
+
+
+
+
+
+
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .accordion:hover {
@@ -101,6 +115,8 @@ p{
   font-family: "IBM Plex Mono", monospace;
   font-size:12px;
   margin-left:10%;
+  
+  
 }
 
 .panel p:hover {
@@ -120,9 +136,9 @@ p{
   content: "\2796"; /* Unicode character for "minus" sign (-) */
   font-size: 8px;
   color:blue;
+  
 }
   
-
 
 /*Image*/
 .blog-box{
@@ -130,11 +146,16 @@ p{
   background-color: #ffffff;
   border:1px solid #ececee;
   margin:0px;
+
 }
 
 .blog-img{
   width:100%;
   height:auto;
+
+
+  
+  
 
 }
 

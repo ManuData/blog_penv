@@ -1,0 +1,156 @@
+/* Sets the background color of the body to blue. Sets font to Rubik */
+
+body {
+    background-color: white;
+    font-family: 'rubik', sans-serif;
+    
+  }
+  
+  /* Aligns the heading text to the center. */
+   
+  h1 {
+    text-align: center;
+  }
+  
+  /* Sets the width for the accordion. Sets the margin to 90px on the top and bottom and auto to the left and right */
+  
+  .accordion {
+    width: 800px;
+    margin: 90px auto;
+    color: black;
+    background-color: white;
+    padding: 45px 45px;
+  }
+
+
+  .accordion .container {
+    position: relative;
+    margin: 10px 10px;
+  }
+  
+  /* Positions the labels relative to the .container. Adds padding to the top and bottom and increases font size. Also makes its cursor a pointer */
+  
+  .accordion .label {
+    position: relative;
+    padding: 5px 0;
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+  }
+
+
+
+  /* Positions the plus sign 5px from the right. Centers it using the transform property. */
+
+.accordion .label::before {
+    content: '\02795';
+    color: black;
+    position: absolute;
+    top: 50%;
+    right: -5px;
+    font-size: 8px;
+    transform: translateY(-50%);
+  }
+  
+  /* Hides the content (height: 0), decreases font size, justifies text and adds transition */
+  
+  .accordion .content {
+    position: relative;
+    background: white;
+    height: 0;
+    font-size: 20px;
+    text-align: justify;
+    width: 780px;
+    overflow: hidden;
+    transition: 0.75s;
+  }
+  
+    /*Blog image*/
+
+    .blog-box{
+    width:650px;
+    background-color: #ffffff;
+    border:1px solid #ececee;
+    margin:0px;
+  
+  }
+
+  .blog-img{
+    width:100%;
+    height:auto;
+  
+  }
+
+  .blog-img img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    object-position:center;
+  }
+
+
+
+  /* Adds a horizontal line between the contents */
+  
+  .accordion hr {
+    width: 100;
+    margin-left: 0;
+    border: 0.5px solid black;
+  }
+
+
+  /* Unhides the content part when active. Sets the height */
+
+.accordion .container.active .content {
+    height: 550px;
+    
+  }
+  
+  /* Changes from plus sign to negative sign once active */
+  
+  .accordion .container.active .label::before {
+    content: "\2796";
+    font-size: 8px;
+    
+  }
+
+
+  /*Logic for mobile*/
+
+   /* LOGIC FOR MOBILE*/
+    
+   @media screen and (max-width: 450px){
+  
+
+    .accordion{
+
+      width: auto;
+      margin-left:0;
+
+    }
+    
+    .accordion .container{
+
+      width: 100%;
+      margin-left:0;
+
+    }
+
+
+    .blog-box{
+      margin:20px 10px;
+      width:35%;
+      margin-left:0;
+    
+  }
+
+
+  .blog-img{
+    width: auto;
+    margin-left:0;
+  
+  }
+  
+  
+
+}
