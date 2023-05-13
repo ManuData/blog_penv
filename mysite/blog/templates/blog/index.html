@@ -4,7 +4,10 @@
 {%block title%}Pagina inicio{%endblock%}
 {% block header-indexcss%} href= "{% static 'blog/index.css' %}" {% endblock %}
 
+
 {%block content%} 
+
+
 
 <?xml version="1.0" ?>
 
@@ -44,89 +47,59 @@
 
             <div class="mb1">
               <div>Proyectos:</div>
-              
             </div>
-          
-             <div class="accordion-test">
+            <body>
+                <div class="accordion-body">
+                <div class="accordion">
+                  <hr>
+                  <div class="container">
+                    <div class="label">Roadmap to 30K</div>
+                    <div class="content">Hypertext Markup Language (HTML) is a computer language that makes up most web pages and online applications. A hypertext is a text that is used to reference other pieces of text, while a markup language is a series of markings that tells web servers the style and structure of a document. HTML is very simple to learn and use.
+                        <div class="blog-box">
+                            <div class="blog-img">
+                        <img src="{% static 'blog/images/coche.jpeg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                  </div>
+                  <hr>
+                  <div class="container">
+                    <div class="label">Roadmap to 60K</div>
+                    <div class="content">CSS stands for Cascading Style Sheets. It is the language for describing the presentation of Web pages, including colours, layout, and fonts, thus making our web pages presentable to the users. CSS is designed to make style sheets for the web. It is independent of HTML and can be used with any XML-based markup language. CSS is popularly called the design language of the web.
+                        <div class="blog-box">
+                            <div class="blog-img">
+                        <img src="{% static 'blog/images/coche.jpeg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="container">
+                    <div class="label">Roadmap to 6 Figures</div>
+                    <div class="content">JavaScript is a scripting or programming language that allows you to implement complex features on web pages — every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved. It is the third of the web trio.
+                        <div class="blog-box">
+                            <div class="blog-img">
+                        <img src="{% static 'blog/images/coche.jpeg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+                </div>
             
-                <!--Seccion base técnica-->
-              
-                <button class="accordion">Roadmap to 35K</button>
-                <div class="panel">
-                
-                    <a href='{{ article.get_absolute_url }}'> <p>test</p></a>
+              </body>
 
-                   <!-- Box 1-->
-                    <div class="blog-box">
-                      <!-- Img-->
-                      <div class="blog-img">
-                          <img src="{% static 'blog/images/coche.jpeg' %}" alt="">
-                      </div>
-                      <p>This is a test that is important to check if the text make sense</p>
-              
-                </div>
-
-                </div>
-                
-                <!--Seccion base analítica-->
-              
-                <button class="accordion">Roadmap to 60K</button>
-                <div class="panel">
-                    <a href='{{ article.get_absolute_url }}'> <p>test</p></a>
-                   <!-- Box 1-->
-                    <div class="blog-box">
-                      <!-- Img-->
-                      <div class="blog-img">
-                          <img src="{% static 'blog/images/coche.jpeg' %}" alt="">
-                      </div>
-                      <p>This is a test that is important to check if the text make sense</p>
-              
-                </div>
-
-                </div>
-              
-                <!--Seccion base estratégica-->
-                
-                <button class="accordion">Roadmap to 6 figures</button>
-                <div class="panel">
-              
-                    <a href='{{ article.get_absolute_url }}'> <p>test</p></a>
-                    <!-- Box 1-->
-                    <div class="blog-box">
-                      <!-- Img-->
-                      <div class="blog-img">
-                          <img src="{% static 'blog/images/coche.jpeg' %}" alt="">
-                      </div>
-                      <p>This is a test that is important to check if the text make sense</p>
-                 
-              
-                </div>
-
-                          
-              </div>  
-
-             
-              
               <script>
-                var acc = document.getElementsByClassName("accordion");
-                for (var i = 0; i < acc.length; i++) {
-                  acc[i].addEventListener("click", function() {
-                    /* Toggle between adding and removing the "active" class,
-                    to highlight the button that controls the panel */
-                    this.classList.toggle("active");
-                
-                    /* Toggle between hiding and showing the active panel */
-                    var panel = this.nextElementSibling;
-                    if (panel.style.display === "block") {
-                      panel.style.display = "none";
-                    } else {
-                      panel.style.display = "block";
-                    }
-                  });
+                const accordion = document.getElementsByClassName('container');
+                for (i=0; i<accordion.length; i++) {
+                accordion[i].addEventListener('click', function () {
+                    this.classList.toggle('active')
+                })
                 }
-                </script>
 
-               
+            </script>
 
 
 {%endblock%} 

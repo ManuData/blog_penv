@@ -5,6 +5,15 @@ body{
   margin:1rem;
 }
 
+/*Eliminar la barra de busqueda*/
+
+#Search-Bar-Desktop{
+  display:none;
+}
+
+#Search-Bar-Mobile{
+  display:none;
+}
 
 
   /*NAV*/

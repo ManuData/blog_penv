@@ -22,8 +22,8 @@ def index(request):
     # DataLayer
     dl = {'pagePath':request.path,'pageCategory':'home'}
     pageUrl = request.path
-    #response = render(request,'blog/index.html',{'dataLayer':dl})
-    response = render(request,'blog/test.html',{'dataLayer':dl})
+    response = render(request,'blog/index.html',{'dataLayer':dl})
+    #response = render(request,'blog/test.html',{'dataLayer':dl})
     response.set_cookie('TEST', 'PUTO AMO !!')
     return response
  
