@@ -13,7 +13,7 @@
                         }, 400)
             setTimeout(() => {snackBar("Introduce información en los 2 campos")}, 400)
 
-        }else{
+        } else {
 
             // AJAX call
             $(document).one('submit', '#post-form',function(e){

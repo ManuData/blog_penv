@@ -31,6 +31,9 @@ def index(request):
 def base(request):
     return render(request,'blog/base.html')
 
+def logos(request):
+    return render(request,'blog/logos.html')
+
 
 def article(request,slug,pk): # Return one single post/article
 

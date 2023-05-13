@@ -10,8 +10,7 @@ urlpatterns = [
     path('article/<slug:slug>/<int:pk>', views.article, name='article-detail'),
     path('articles', views.articles, name='articles'),
     path('feedback/', views.create_post, name='form_ajax'),
-    path('test/', views.index, name='test')
-
+    path('logos/', views.logos, name='logos'),
      
 ] 
 
