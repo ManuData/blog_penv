@@ -45,7 +45,6 @@ section p{
  }
 
 
-
 h3{
   margin-left:10%;
   font-family: 'Neue Haas Grotesk Text Std', sans-serif; 
@@ -82,10 +81,6 @@ p{
   font-size:14px;
   margin-left:10%;
   letter-spacing: 0.05em; 
-  
-  
- 
- 
  
 }
 
@@ -94,9 +89,6 @@ p{
 .collapsing {
   transition: height 0.4s ease;
 }
-
-
-
 
 
 
@@ -152,10 +144,6 @@ p{
 .blog-img{
   width:100%;
   height:auto;
-
-
-  
-  
 
 }
 

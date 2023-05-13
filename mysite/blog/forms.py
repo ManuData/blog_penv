@@ -2,6 +2,7 @@
 from django import forms
 from blog.models import Post
 
+# NOTA: Not currently used to save data in the data base
 
 class PostForm(forms.ModelForm):
     class Meta:

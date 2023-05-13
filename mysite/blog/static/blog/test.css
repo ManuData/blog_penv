@@ -2,7 +2,7 @@
 
 body {
     background-color: white;
-    font-family: 'rubik', sans-serif;
+    font-family: 'Neue Haas Grotesk Text Std', sans-serif;
     
   }
   
@@ -11,21 +11,48 @@ body {
   h1 {
     text-align: center;
   }
+
+  /*Section*/
+
+
+  section {
+    margin-bottom: 5rem;
+   }
+   
+  section p {
+    font-family: 'Neue Haas Grotesk Text Std', sans-serif;  
+    padding: 10px 45px;
+    font-size: 14px;
+    letter-spacing: .03em;
+
+       
+  
+  }
+   .mb1 {
+    font-family: 'Neue Haas Grotesk Text Std', sans-serif; 
+    letter-spacing: .03em;   
+    padding: 10px 45px;                               
+    font-size: 14px;
+ 
+  
+   }
+  
   
   /* Sets the width for the accordion. Sets the margin to 90px on the top and bottom and auto to the left and right */
   
   .accordion {
     width: 800px;
-    margin: 90px auto;
+   /* margin: 90px auto;*/
     color: black;
     background-color: white;
-    padding: 45px 45px;
+    /*margin-left:10%;*/
+    padding: 10px 45px;
   }
 
 
   .accordion .container {
     position: relative;
-    margin: 10px 10px;
+    /*margin: 10px 10px;*/
   }
   
   /* Positions the labels relative to the .container. Adds padding to the top and bottom and increases font size. Also makes its cursor a pointer */
@@ -36,6 +63,7 @@ body {
     font-size: 14px;
     color: black;
     cursor: pointer;
+    letter-spacing: .03em;
   }
 
 
@@ -63,11 +91,12 @@ body {
     width: 780px;
     overflow: hidden;
     transition: 0.75s;
+    font-size: 14px;
   }
   
     /*Blog image*/
 
-    .blog-box{
+    .blog-box {
     width:650px;
     background-color: #ffffff;
     border:1px solid #ececee;
@@ -75,13 +104,13 @@ body {
   
   }
 
-  .blog-img{
+  .blog-img {
     width:100%;
     height:auto;
   
   }
 
-  .blog-img img{
+  .blog-img img {
     width:100%;
     height:100%;
     object-fit: cover;
@@ -103,6 +132,7 @@ body {
 
 .accordion .container.active .content {
     height: 550px;
+    font-size: 14px;
     
   }
   
@@ -112,6 +142,7 @@ body {
     content: "\2796";
     font-size: 8px;
     
+    
   }
 
 
@@ -119,17 +150,17 @@ body {
 
    /* LOGIC FOR MOBILE*/
     
-   @media screen and (max-width: 450px){
+   @media screen and (max-width: 450px) {
   
 
-    .accordion{
+    .accordion {
 
       width: auto;
       margin-left:0;
 
     }
     
-    .accordion .container{
+    .accordion .container {
 
       width: 100%;
       margin-left:0;
@@ -137,7 +168,7 @@ body {
     }
 
 
-    .blog-box{
+    .blog-box {
       margin:20px 10px;
       width:35%;
       margin-left:0;
@@ -145,7 +176,7 @@ body {
   }
 
 
-  .blog-img{
+  .blog-img {
     width: auto;
     margin-left:0;
   

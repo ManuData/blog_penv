@@ -95,8 +95,6 @@ def create_post(request):
 
 
 
-
-
 '''
 def create_post(request):
     if request.method == 'POST':
