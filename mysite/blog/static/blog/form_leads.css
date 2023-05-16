@@ -113,6 +113,32 @@ header {
     color:black;
   }
 
+  /*First input : title*/
+  #title {
+    font-family: 'Neue Haas Grotesk Text Std', sans-serif;
+    font-size: 0.875em;
+    width: 470px;
+    height: 50px;
+    padding: 0px 15px 0px 15px;
+    
+    background: transparent;
+    outline: none;
+    color: black;
+    /*color: #726659;*/
+    
+    border: solid 1px black;
+    border-bottom: none;
+    
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+  }
+
+
+
+
+
 
   #submit {
     width: 502px;
@@ -273,6 +299,13 @@ header {
         margin-left:0;
         
     }
+
+    #title{
+      width: 91%;
+
+    }
+
+    
 
     #submit{
 
