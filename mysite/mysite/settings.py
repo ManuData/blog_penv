@@ -9,6 +9,9 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
+import os
+import environ
+
 
 from pathlib import Path
 
@@ -20,12 +23,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%5269&+bhy2*)%==xr_t8#1+sg(&g@z3)^w3$gq-y18#)n=)16'
+
+env = environ.Env()
+environ.Env.read_env()
+SECRET_KEY = env('SECRET_KEY')
+
+
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*'] # DEFAULT: ALLOWED_HOSTS = [], changed to run in any host from docker
 
 
 # Application definition
@@ -41,7 +51,6 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     # Incorporamos el app del search
     'search.apps.SearchConfig',
-
     # Framework para API
     'rest_framework',
 
@@ -55,6 +64,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # Para subir las imagenes a GCP
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -78,7 +89,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
-# Database
+# Database 
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 #DATABASES = {
@@ -88,6 +99,9 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
    # }
 #}
 
+
+
+"""
 import environ
 env = environ.Env()
 environ.Env.read_env()
@@ -98,15 +112,48 @@ DATABASES = {
         'NAME': 'blog_dev',
         'USER': env('DB_USER'),
         'PASSWORD': env("DB_PASSWORD"),
-        'HOST': 'localhost',
+        'HOST': 'localhost', 
         'PORT': '5432',
     }
 }
 
+"""
 
 
 
+# [START db_setup]
+if os.getenv('GAE_APPLICATION', None):
+    # Running on production App Engine, so connect to Google Cloud SQL using
+    # the unix socket at /cloudsql/<your-cloudsql-connection string>
 
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'HOST': env('DB_HOST'),
+            'USER': env('USER'),
+            'PASSWORD': env('DB_PASSWORD'),
+            'NAME': env('DB_NAME'),
+
+        }
+    }
+else:
+    # Running locally so connect to either a local MySQL instance or connect 
+    # to Cloud SQL via the proxy.  To start the proxy via command line: 
+    #    $ cloud_sql_proxy -instances=[INSTANCE_CONNECTION_NAME]=tcp:3306 
+    # See https://cloud.google.com/sql/docs/mysql-connect-proxy
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'HOST':'127.0.0.1',
+            'PORT': '5432',
+            'NAME': 'postgres',
+            'USER': 'postgres',
+            'PASSWORD': env('DB_PASSWORD'),
+        }
+    }
+
+
+# [END db_setup]
 
 
 
@@ -144,14 +191,49 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+#STATIC_URL = 'static/' Nota: @mpv pongo esta variable mas abajo 
 
+
+"""
+# NO TE: @mvp comment: Config for local (whithout GCP)
 # Media files (@mvp comment: Images from User, DDBB)
 
 MEDIA_URL= '/media/'
 MEDIA_ROOT = BASE_DIR/'blog/media/'
 
+"""
+
+
+# TESTING GCP
+
+STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # He generado una carpeta "staticfiles" nueva que no tenia antes...
+
+# Set up variables for cloud storage
+
+# Use the JSON key file you downloaded
+GOOGLE_APPLICATION_CREDENTIALS = '/Users/manuelvicarioperez/Desktop/VIRTUAL_ENVS/test-deploy/blog_penv/mysite/blog-dev-386712-89a064241e9a.json'
+
+# Storage settings
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+GS_BUCKET_NAME = 'blog-386916_media-blog'
+
+
+
+# Set the CORS headers to allow access to your bucket
+GS_HEADERS = {
+    'x-goog-acl': 'public-read',
+    'Cache-Control': 'public, max-age=86400',
+}
+
+
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+

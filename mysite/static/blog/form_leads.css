@@ -1,0 +1,323 @@
+html{
+
+ /*height: 200vh;*/
+
+}
+
+/*Header*/
+header {
+    font-family: 'Neue Haas Grotesk Text Std', sans-serif;
+    position: relative;
+    margin: 100px 0 25px 0;
+    font-size: 2.3em;
+    text-align: center;
+    letter-spacing: 7px;
+  }
+
+  #h2-form{
+    font-family: 'Neue Haas Grotesk Text Std', sans-serif;
+    position: relative;
+    /*margin: 100px 0 25px 0;*/
+    font-size: 1.3em;
+    text-align: center;
+    letter-spacing: 4px;
+    
+
+  }
+
+
+
+#Search-Bar-Desktop{
+    display:none;
+
+}
+
+#Search-Bar-Mobile{
+    display:none;
+}
+
+
+
+#post-form {
+    position: relative;
+    width: 500px;
+    margin: 50px auto 100px auto;
+    color:black;
+  }
+
+  ::placeholder{
+
+    color:#b3aca7;
+
+  }
+ 
+
+
+  input {
+    font-family: 'Neue Haas Grotesk Text Std', sans-serif;
+    color: #b3aca7;
+    font-size: 14px;
+    width: 470px;
+    height: 50px;
+    padding: 0px 15px 0px 15px;
+    
+    background: transparent;
+    outline: none;
+    
+    /*color: #726659;*/
+    border: solid 1px black;
+    
+    /*border: solid 1px #b3aca7;*/
+    border-bottom: none;
+    
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+  }
+  
+  input:hover {
+    /*background: #b3aca7;*/
+    color: black;
+    
+    
+    /*color: #e2dedb;*/
+  }
+
+
+
+  #salary-ranges {
+    font-family: 'Neue Haas Grotesk Text Std', sans-serif;
+    font-size: 0.875em;
+    width: 502px;
+    height: 50px;
+    padding: 0px 15px 0px 15px;
+    
+    background: transparent;
+    outline: none;
+    color: #b3aca7;
+    /*color: #726659;*/
+    
+    border: solid 1px black;
+    border-bottom: none;
+    
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+  }
+  
+  #salary-ranges:hover {
+    /*background: #b3aca7;
+    color: #e2dedb;*/
+    color:black;
+  }
+
+  /*First input : title*/
+  #title {
+    font-family: 'Neue Haas Grotesk Text Std', sans-serif;
+    font-size: 0.875em;
+    width: 470px;
+    height: 50px;
+    padding: 0px 15px 0px 15px;
+    
+    background: transparent;
+    outline: none;
+    color: black;
+    /*color: #726659;*/
+    
+    border: solid 1px black;
+    border-bottom: none;
+    
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+  }
+
+
+
+
+
+
+  #submit {
+    width: 502px;
+    height: 35px;
+
+    
+    padding: 0;
+    margin: -5px 0px 0px 0px;
+    
+    font-family: 'Neue Haas Grotesk Text Std', sans-serif;
+    font-size: 0.875em;
+    /*color: #b3aca7;*/
+    color:black;
+    background-color:#d7d7d7;
+    
+    outline:none;
+    cursor: pointer;
+    
+    border: solid 1px black;
+    border-top: none;
+  }
+  
+  #submit:hover {
+    color: white;
+    background-color: black;;
+   
+  }
+
+  /*Efectos loading*/
+
+
+
+  #submit {
+    position: relative;
+    padding: 8px 16px;
+    background: black;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+    #submit:active {
+        background: black
+    }
+
+  .button__text {
+    font: 'Neue Haas Grotesk Text Std', sans-serif;
+    color: #ffffff;
+    transition: all 0.2s;
+}
+
+.button--loading .button__text {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+
+.button--loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+  
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+
+
+/*TOAST*/
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+    font-family: 'Neue Haas Grotesk Text Std', sans-serif;
+    font-size: 14px;
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: rgb(0, 0, 255); /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+
+
+
+  /* MOBILE*/
+
+
+  @media screen and (max-width: 450px){
+
+    #post-form{
+
+        width: 100%;
+        margin-left:0;
+    
+      }
+
+    input{
+        width: 100%;
+        margin-left:0;
+    } 
+    #salary-ranges{
+
+        width: 100%;
+        margin-left:0;
+        
+    }
+
+    #title{
+      width: 91%;
+
+    }
+
+    
+
+    #submit{
+
+        width: 100%;
+        margin-left:0;
+
+    }
+
+
+
+
+
+  }
+
+ 

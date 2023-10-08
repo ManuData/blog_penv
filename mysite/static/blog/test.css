@@ -1,0 +1,224 @@
+
+      
+
+      #image-container img{
+
+        padding-top:15px;
+        width: 100%;
+       
+    
+      }
+     
+      #button-pdf:hover {
+        background-color: black;
+      
+      }
+
+      /*Accordion CSS*/
+
+      /* Style the buttons that are used to open and close the accordion panel */
+
+ h1{
+  font-family: "IBM Plex Mono", monospace;
+  margin-left:10%;
+
+ }   
+
+ section{
+  margin-bottom: 5rem;
+ }
+ 
+section p{
+  font-family: 'Neue Haas Grotesk Text Std', sans-serif;  
+  margin-left:10%;
+  font-size: 14px;
+  letter-spacing: .03em;
+     
+
+}
+ .mb1{
+  font-family: 'Neue Haas Grotesk Text Std', sans-serif; 
+  letter-spacing: .03em;                                   
+  margin-left:10%;
+  font-size: 14px;
+
+ }
+
+
+h3{
+  margin-left:10%;
+  font-family: 'Neue Haas Grotesk Text Std', sans-serif; 
+
+}
+p{
+  font-family: 'Neue Haas Grotesk Text Std', sans-serif;
+  letter-spacing: .01em;                                   
+  font-size: 13px;
+
+}
+
+.accordion-test{
+  font-family: 'Neue Haas Grotesk Text Std', sans-serif; 
+  margin-left:0%;
+  font-size: 14px;
+  margin-bottom: 5rem;
+ 
+
+}
+.accordion {
+  background-color: rgb(255, 254, 254);
+  color:black;
+  cursor: pointer;
+  padding: 0.1em;
+  width: 50%;
+  height: 40px;
+  text-align: left;
+  border:none;
+  outline: none;
+  transition: 0.4s;
+  border-bottom: 0.5px solid;
+  font-family: 'Neue Haas Grotesk Text Std', sans-serif; 
+  font-size:14px;
+  margin-left:10%;
+  letter-spacing: 0.05em; 
+ 
+}
+
+/*Test accordion effect smooth*/
+
+.collapsing {
+  transition: height 0.4s ease;
+}
+
+
+
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color:white;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  font-family: "IBM Plex Mono", monospace;
+  font-size:12px;
+  margin-left:10%;
+  
+  
+}
+
+.panel p:hover {
+  color:#1e02da;
+
+}
+
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+)  content: '\02795';*/
+  font-size: 8px;
+  color:#1e02da;
+  float: right;
+  margin-left: 5px;
+}
+
+.accordion.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+  font-size: 8px;
+  color:blue;
+  
+}
+  
+
+/*Image*/
+.blog-box{
+  width:650px;
+  background-color: #ffffff;
+  border:1px solid #ececee;
+  margin:0px;
+
+}
+
+.blog-img{
+  width:100%;
+  height:auto;
+
+}
+
+.blog-img img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position:center;
+}
+      
+      /* TEST LOGIC FOR DESKTOP*/
+  
+      @media screen and (min-width: 455px){
+  
+        
+      
+  
+        
+      }
+  
+    
+      /* LOGIC FOR MOBILE*/
+    
+      @media screen and (max-width: 450px){
+  
+
+        .accordion{
+
+          width: 100%;
+          margin-left:0;
+
+        }
+        .mb1{
+
+          width: 100%;
+          margin-left:0;
+
+        }
+        .accordion-test{
+
+          width: 100%;
+          margin-left:0;
+
+        }
+
+        h3{
+
+          width: 100%;
+          margin-left:0;
+
+        }
+
+        section p{
+          font-family: 'Neue Haas Grotesk Text Std', sans-serif;  
+          margin-left:0;
+          font-size: 14px;
+          letter-spacing: .01em;   
+        
+        }
+
+        .panel{
+          margin-left:0;
+        }
+
+        .blog-box{
+          margin:20px 10px;
+          width:100%;
+          margin-left:0;
+      }
+        
+      
+    
+        
+    }
+        
+    
+  
+  

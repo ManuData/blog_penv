@@ -125,3 +125,6 @@ def create_post(request):
 '''Post.objects.create(
     title = title,
     description = description,)'''
+
+
+
